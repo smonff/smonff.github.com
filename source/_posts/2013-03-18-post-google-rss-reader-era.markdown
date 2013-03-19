@@ -7,8 +7,7 @@ categories: google, RSS, freedom
 ---
 
 Hey, [Google announce it will close it's RSS *Reader*](http://googleblog.blogspot.fr/2013/03/a-second-spring-of-cleaning.html). 
-So what? Do we really need it anyway? You can find plenty of friendly and beautiful clones of *Reader*, like [Feedly](http://feedly.com)
-or [The Old Reader](http://theoldreader.com/). Both of two seems nice. Both of two are clearly Readers clones and alternatives.
+So what? Do we really need it anyway? You can find [plenty of friendly and beautiful clones of *Reader*](http://www.johndcook.com/blog/2013/03/14/rss-readers-on-linux/), like [Feedly](http://feedly.com) or [The Old Reader](http://theoldreader.com/). Both of two seems nice. Both of two are clearly Readers clones and alternatives.
 
 I first tryed *The Old Reader* for about a month, before all the *Reader* drama when Google announce it's death. It was so slow
 that I was feeling asleep as waiting for a feed to load. I don't notice anything particular in comparaison with Reader. The only thing is that you got some more hype [AJAX stuff](https://en.wikipedia.org/wiki/Ajax_(programming) plus some special *social bits* that makes possible to share more fecal feeds with your friends. Just as if your friends weren't full-time busy by their own feeds.
