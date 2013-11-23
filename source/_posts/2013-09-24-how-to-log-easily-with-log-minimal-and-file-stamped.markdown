@@ -24,14 +24,20 @@ $ cpanm Log::Minimal File::Stamped
 ```
 
 ``` perl Log some stuff to a file
+use strict;
+use warnings;
+
 use Log::Minimal;
 use File::Stamped;
+use File::HomeDir;
+use File::Spec::Function qw(catdir catfile);
 
 $ENV{LM_DEBUG} = 1;
-my $tmp = '/tmp';
+
+my $work_path = File::HomeDir_>my_documents;
 
 my $log_fh = File::Stamped->new(
-  pattern => "$tmp/log.%Y-%m-%d.out",
+  pattern => catdir( $work_path, "log.%Y-%m-%d.out"),
 );
 	
 # Overrides Log::Minimal PRINT method
@@ -47,10 +53,10 @@ debugf("Other");
 debugf("interestant");
 debugf("things...");
 ```
-If you `tail` to `/tmp/log.2013-09-24.out` from your terminal during your module tests...
+If you `tail` to `/home/user/Documents/log.2013-09-24.out` (adjust this to your own OS) from your terminal during your module tests...
 
 ``` bash tail
-$ tail -vf /tmp/log.2013-09-24.out
+$ tail -vf /home/user/Douments/log.2013-09-24.out
 ```
 
 ... it will log the following :
@@ -62,4 +68,4 @@ $ tail -vf /tmp/log.2013-09-24.out
 2013-09-24T19:28:39 [DEBUG] things...
 ```
 
-That was a very *minimal* blog post, but I hope it could be usefull.
+That was a very *minimal* blog post, but I hope it could be usefull. Thanx to nmishin for cross-platforming advices !
