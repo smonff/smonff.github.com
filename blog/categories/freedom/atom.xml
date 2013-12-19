@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: freedom | Smonff Shurfs]]></title>
-  <link href="http://smonff.github.io/blog/categories/freedom/atom.xml" rel="self"/>
-  <link href="http://smonff.github.io/"/>
-  <updated>2013-12-19T18:18:30+07:00</updated>
-  <id>http://smonff.github.io/</id>
+  <link href="http://smonff.github.com/blog/categories/freedom/atom.xml" rel="self"/>
+  <link href="http://smonff.github.com/"/>
+  <updated>2013-12-19T18:55:28+07:00</updated>
+  <id>http://smonff.github.com/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Post-Google RSS Reader era]]></title>
-    <link href="http://smonff.github.io/blog/2013/03/19/post-google-rss-reader-era/"/>
+    <link href="http://smonff.github.com/blog/2013/03/19/post-google-rss-reader-era/"/>
     <updated>2013-03-19T14:29:00+07:00</updated>
-    <id>http://smonff.github.io/blog/2013/03/19/post-google-rss-reader-era</id>
+    <id>http://smonff.github.com/blog/2013/03/19/post-google-rss-reader-era</id>
     <content type="html"><![CDATA[<p>Hey, <a href="http://googleblog.blogspot.fr/2013/03/a-second-spring-of-cleaning.html">Google announce it will close it's RSS <em>Reader</em></a>.
 So what? Do we really need it anyway? You can find <a href="http://www.johndcook.com/blog/2013/03/14/rss-readers-on-linux/">plenty of friendly and beautiful clones of <em>Reader</em></a>, like <a href="http://feedly.com">Feedly</a> or <a href="http://theoldreader.com/">The Old Reader</a>. Both of two seems nice. Both of two are clearly Readers clones and alternatives.</p>
 
@@ -31,7 +31,7 @@ that I was feeling asleep as waiting for a feed to load. I don't notice anything
 <blockquote class="twitter-tweet" lang="fr"><p>So it looks like @<a href="https://twitter.com/feedly">feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.</p>&mdash; Lea Verou (@LeaVerou) <a href="https://twitter.com/LeaVerou/status/313394360412672000">17 mars 2013</a></blockquote>
 
 
-<script async src="http://smonff.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="http://smonff.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>So. What if it will be true. What if Feedly disappear soon? It seems a good solution would be to select a good RSS feed free software like <a href="http://tt-rss.org/">Tiny Tiny RSS</a>, pick-up a random server, set-up a LAMP environment and make things by yourself (as describe in <a href="http://www.sebsauvage.net/rhaa/index.php?2013/03/15/17/15/39-arretez-de-pleurer-google-reader-hebergez-un-lecteur-rss-chez-vous">this sebsauvage post</a>... I mention <em>Tiny Tiny RSS</em> because it's realy simple, customizable and feature <a href="http://f-droid.org/repository/browse/?fdfilter=rss&amp;fdid=org.fox.ttrss">a great Android client that communicate with an API on your server's instance</a> featuring interesting synchronisation stuff.</p>

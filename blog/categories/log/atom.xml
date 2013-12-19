@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: log | Smonff Shurfs]]></title>
-  <link href="http://smonff.github.io/blog/categories/log/atom.xml" rel="self"/>
-  <link href="http://smonff.github.io/"/>
-  <updated>2013-12-19T18:18:30+07:00</updated>
-  <id>http://smonff.github.io/</id>
+  <link href="http://smonff.github.com/blog/categories/log/atom.xml" rel="self"/>
+  <link href="http://smonff.github.com/"/>
+  <updated>2013-12-19T18:55:28+07:00</updated>
+  <id>http://smonff.github.com/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to log easily with Log::Minimal and File::Stamped ?]]></title>
-    <link href="http://smonff.github.io/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped/"/>
+    <link href="http://smonff.github.com/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped/"/>
     <updated>2013-09-24T18:00:00+07:00</updated>
-    <id>http://smonff.github.io/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped</id>
+    <id>http://smonff.github.com/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped</id>
     <content type="html"><![CDATA[<p>We love logs because it helps us to debug during development. We also need a quick way to enable / disable logs because it's not necessary for everybody :</p>
 
 <ul>

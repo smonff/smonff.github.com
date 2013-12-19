@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Smonff Shurfs]]></title>
+  <link href="http://smonff.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://smonff.github.com/"/>
+  <updated>2013-12-19T18:55:28+07:00</updated>
+  <id>http://smonff.github.com/</id>
+  <author>
+    <name><![CDATA[Smonff]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Configuring Octopress]]></title>
+    <link href="http://smonff.github.com/blog/2013/12/19/configuring-octopress/"/>
+    <updated>2013-12-19T18:27:00+07:00</updated>
+    <id>http://smonff.github.com/blog/2013/12/19/configuring-octopress</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
