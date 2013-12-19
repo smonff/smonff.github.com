@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: RSS, | Smonff Shurfs]]></title>
+  <link href="http://smonff.github.io/blog/categories/rss/atom.xml" rel="self"/>
+  <link href="http://smonff.github.io/"/>
+  <updated>2013-12-19T18:18:30+07:00</updated>
+  <id>http://smonff.github.io/</id>
+  <author>
+    <name><![CDATA[Smonff]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Post-Google RSS Reader era]]></title>
+    <link href="http://smonff.github.io/blog/2013/03/19/post-google-rss-reader-era/"/>
+    <updated>2013-03-19T14:29:00+07:00</updated>
+    <id>http://smonff.github.io/blog/2013/03/19/post-google-rss-reader-era</id>
+    <content type="html"><![CDATA[<p>Hey, <a href="http://googleblog.blogspot.fr/2013/03/a-second-spring-of-cleaning.html">Google announce it will close it's RSS <em>Reader</em></a>.
+So what? Do we really need it anyway? You can find <a href="http://www.johndcook.com/blog/2013/03/14/rss-readers-on-linux/">plenty of friendly and beautiful clones of <em>Reader</em></a>, like <a href="http://feedly.com">Feedly</a> or <a href="http://theoldreader.com/">The Old Reader</a>. Both of two seems nice. Both of two are clearly Readers clones and alternatives.</p>
+
+<p>I first tryed <em>The Old Reader</em> for about a month, before all the <em>Reader</em> drama when Google announce it's death. It was so slow
+that I was feeling asleep as waiting for a feed to load. I don't notice anything particular in comparaison with Reader. The only thing is that you got some more hype <a href="https://en.wikipedia.org/wiki/Ajax_(programming">AJAX stuff</a> plus some special <em>social bits</em> that makes possible to share more fecal feeds with your friends. Just as if your friends weren't full-time busy by their own feeds.</p>
+
+<p>This is a very important thing. <em>Feeds</em>... Hey, if you want to share feeds with friends, please, open it, don't close it for privacy reasons, use a tool without any account or password, open a Wiki or whatever.</p>
+
+<p>Then, when the Reader tragedy came, I've tryed <a href="http://feedly.com">Feedly</a>. Honestly, it seems wonderful. I've liked the <a href="https://play.google.com/store/apps/details?id=com.devhd.feedly">Android App</a>, hey it's a wonderful tool. Everybody were recommanding it on the internet. It seems it's gonna be my new RSS feeds reader. But this morning I read an <a href="https://twitter.com/LeaVerou/status/313394360412672000">interesting Lea Verou Tweet</a>:</p>
+
+<blockquote class="twitter-tweet" lang="fr"><p>So it looks like @<a href="https://twitter.com/feedly">feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.</p>&mdash; Lea Verou (@LeaVerou) <a href="https://twitter.com/LeaVerou/status/313394360412672000">17 mars 2013</a></blockquote>
+
+
+<script async src="http://smonff.github.io//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>So. What if it will be true. What if Feedly disappear soon? It seems a good solution would be to select a good RSS feed free software like <a href="http://tt-rss.org/">Tiny Tiny RSS</a>, pick-up a random server, set-up a LAMP environment and make things by yourself (as describe in <a href="http://www.sebsauvage.net/rhaa/index.php?2013/03/15/17/15/39-arretez-de-pleurer-google-reader-hebergez-un-lecteur-rss-chez-vous">this sebsauvage post</a>... I mention <em>Tiny Tiny RSS</em> because it's realy simple, customizable and feature <a href="http://f-droid.org/repository/browse/?fdfilter=rss&amp;fdid=org.fox.ttrss">a great Android client that communicate with an API on your server's instance</a> featuring interesting synchronisation stuff.</p>
+
+<p>You would not get a prettiest UI/UX as the Feedly one, you won't get the Google Reader goodies, but your data will be safe. And you can hack your UI as you want... Ok, Reader was pretty, but we don't like proprietary software. We would like to keep our feeds free, we don't need these <em>closing source</em> web-apps that starve our feeds...</p>
+]]></content>
+  </entry>
+  
+</feed>

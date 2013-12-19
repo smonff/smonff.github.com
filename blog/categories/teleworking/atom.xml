@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: teleworking | Smonff Shurfs]]></title>
+  <link href="http://smonff.github.io/blog/categories/teleworking/atom.xml" rel="self"/>
+  <link href="http://smonff.github.io/"/>
+  <updated>2013-12-19T18:18:30+07:00</updated>
+  <id>http://smonff.github.io/</id>
+  <author>
+    <name><![CDATA[Smonff]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Landing in Lao PDR]]></title>
+    <link href="http://smonff.github.io/blog/2013/12/19/landing-in-lao-pdr/"/>
+    <updated>2013-12-19T18:05:00+07:00</updated>
+    <id>http://smonff.github.io/blog/2013/12/19/landing-in-lao-pdr</id>
+    <content type="html"><![CDATA[<ul>
+<li>Landing</li>
+<li>This blog is going to become a travel and technical blog : what does it mean to update websites from a foreign country where standards about <em>bande-passante</em> are not the same than ours</li>
+<li>Some problems about accessing technical websites</li>
+<li>How it changes things</li>
+<li>Why mobile changes the workers life</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

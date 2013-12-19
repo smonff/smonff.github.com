@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: welcome | Smonff Shurfs]]></title>
+  <link href="http://smonff.github.io/blog/categories/welcome/atom.xml" rel="self"/>
+  <link href="http://smonff.github.io/"/>
+  <updated>2013-12-19T18:18:30+07:00</updated>
+  <id>http://smonff.github.io/</id>
+  <author>
+    <name><![CDATA[Smonff]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://smonff.github.io/blog/2013/03/11/hello-world/"/>
+    <updated>2013-03-11T14:42:00+07:00</updated>
+    <id>http://smonff.github.io/blog/2013/03/11/hello-world</id>
+    <content type="html"><![CDATA[<p>This is my <a href="http://smonff@github.com">new blog</a>. It's made with <a href="http://octopress.org">Octopress</a> and totally (software and content) <a href="https://github.com/smonff/smonff.github.com">open source</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
