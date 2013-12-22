@@ -34,7 +34,7 @@ use File::Spec::Function qw(catdir catfile);
 
 $ENV{LM_DEBUG} = 1;
 
-my $work_path = File::HomeDir_>my_documents;
+my $work_path = File::HomeDir->my_documents;
 
 my $log_fh = File::Stamped->new(
   pattern => catdir( $work_path, "log.%Y-%m-%d.out"),
