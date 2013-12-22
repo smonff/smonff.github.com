@@ -2,3 +2,7 @@ ul,
 ol { 
      margin-left: 30px;
 }
+
+article {
+  margin-bottom: 30px;
+}

@@ -2,47 +2,105 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Smonff Shurfs]]></title>
-  <link href="http://smonff.github.com/atom.xml" rel="self"/>
-  <link href="http://smonff.github.com/"/>
-  <updated>2013-12-19T19:03:19+07:00</updated>
-  <id>http://smonff.github.com/</id>
+  <link href="http://smonff.github.io/atom.xml" rel="self"/>
+  <link href="http://smonff.github.io/"/>
+  <updated>2013-12-22T18:00:02+07:00</updated>
+  <id>http://smonff.github.io/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
-    
+    <email><![CDATA[smonff@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[Configuring Octopress]]></title>
-    <link href="http://smonff.github.com/blog/2013/12/19/configuring-octopress/"/>
-    <updated>2013-12-19T18:27:00+07:00</updated>
-    <id>http://smonff.github.com/blog/2013/12/19/configuring-octopress</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Landing in Lao PDR]]></title>
-    <link href="http://smonff.github.com/blog/2013/12/19/landing-in-lao-pdr/"/>
-    <updated>2013-12-19T18:05:00+07:00</updated>
-    <id>http://smonff.github.com/blog/2013/12/19/landing-in-lao-pdr</id>
-    <content type="html"><![CDATA[<ul>
-<li>Landing</li>
-<li>This blog is going to become a travel and technical blog : what does it mean to update websites from a foreign country where standards about <em>bande-passante</em> are not the same than ours</li>
-<li>Some problems about accessing technical websites</li>
-<li>How it changes things</li>
-<li>Why mobile changes the workers life</li>
+    <title type="html"><![CDATA[Getting things done for developers working in low-band-switch areas]]></title>
+    <link href="http://smonff.github.io/blog/2013/12/22/getting-thing-done-for-developpers-working-in-low-bandswitch-areas/"/>
+    <updated>2013-12-22T20:01:00+07:00</updated>
+    <id>http://smonff.github.io/blog/2013/12/22/getting-thing-done-for-developpers-working-in-low-bandswitch-areas</id>
+    <content type="html"><![CDATA[<p>Now I have landing in <a href="https://en.wikipedia.org/wiki/Lao_PDR">Lao PDR</a> and I don&#8217;t got my high-speed Internet connection and all that sweet stuff. All I have is a Nexus 4 without a SIM card for this country. Thought, it don&#8217;t seem to be a problem to find it because just before the immigration point in airport, the application form already mention an add for <a href="http://www.beeline.la/">one of the main telecoms company</a> that explain that  <em>to really communicate like a local</em>, I should choose it.</p>
+
+<h2>Get an unlimited data plan</h2>
+
+<p>Anyway, I have to work for my <a href="http://etyssa.fr">french company</a> that kindly grant me some holidays, just in time to empty my french flat and have some time to find electricity and Internet connection in Lao PDR just before to be back to work.</p>
+
+<p>Finding a new SIM card is not a problem (you can literally find credit sellers for mobile phones at <em>each street corner</em>), and you don&#8217;t even need to give an address or have a bank account. The main problem is you don&#8217;t speak Lao, and Lao people don&#8217;t speak English that much. So maybe they will not understand you need this killer-unlimited-data-plan and give you some <em>re-loadable</em> cards.</p>
+
+<p>You will understand very soon that unlimited data plan, including phone calls and SMS like the one I previously know with <a href="http://free.fr">Free</a> in France is not that easy to find. 5 x 50 000 kips (5€) cards later and two days of surfing has been enough to empty my cards :( , that was supposed to allow 2.5G of data.</p>
+
+<h2>First sensations</h2>
+
+<p>Once I have asked to the nice couple who sell me the cards where I can get bigger one or unlimited ones, they redirect me to
+the nearest <a href="http://laotel.com/home_Lao.html">Lao Telecoms</a> office where people have been able to advice me a decent unlimited data-plan (still in alpha-test for me). Some impressions about it :</p>
+
+<ul>
+<li>SSH is available but pretty slow</li>
+<li>band-switch is pretty good</li>
+<li>no outgoing SMTP (or don&#8217;t find it for my current ISP)</li>
+<li>some obtained IPs seems to be considered as potentially dangerous (open proxies, low reputation for spam, e.g. blacklisted on Wikipedia)</li>
+<li>band-switch has up and downs</li>
+<li>Some websites are hardly accessible, I don&#8217;t know if they are <em>locked</em> or <em>censored</em>, or only hosted on too far away servers without relays</li>
+<li>network and / or electricity can be down</li>
 </ul>
 
+
+<h3>Solutions to problems</h3>
+
+<h4>Mosh</h4>
+
+<p><img src="http://smonff.github.io/images/posts/broken_pipe.jpg" alt="Never let you abuse by stuff that shouldn't happen" /></p>
+
+<p>First, I was very worried about SSH <em>availability</em>. A friend tried it for me from Laos before my departure, and the stuff seems to be OK. But I&#8217;ve forgot something: SSH is not that lightweight, mainly because of it&#8217;s strong encryption.</p>
+
+<p>Another friend advices me to use <a href="http://mosh.mit.edu">Mosh</a> :</p>
+
+<blockquote><p>Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes.</p><p>Mosh is a replacement for SSH. It&#8217;s more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.</p><footer><strong>Mosh contributors,</strong> <cite><a href='http://mosh.mit.edu'>mosh.mit.edu/&hellip;</a></cite></footer></blockquote>
+
+
+<p>And Mosh is absolutely incredible. SSH was almost unusable, and even dangerous because of the latency time I&#8217;ve experimented that could increase typing errors. Mosh seems to be the best solution for mobile workers that need a connection to a remote SSH server because of two of it&#8217;s main features :</p>
+
+<ul>
+<li><strong>roaming connection available</strong>. You can literally switch to a connection to another and the connection between the local and distant Mosh servers will be maintained.</li>
+<li><strong>predictive typing</strong>. As the connection will be slow, typing through SSH will have a long latency. This makes me very angry. Predictive typing will reduce the latency in an awesome way, you can&#8217;t almost feel it. In their own words, the stuff <em>get rid of network lag</em>.</li>
+</ul>
+
+
+<p>My life has been changed the day I have discovered my old <a href="https://en.wikipedia.org/wiki/Tmux">Tmux</a>. I believe the use of Tmux + Mosh will make our life easier if you telecommute or have to switch connections easily or simply hibernate your computer without experiment some <em>broken pipe</em> horrors.</p>
+
+<h4>Tor</h4>
+
+<p>I don&#8217;t know how the Web could be controlled in Lao PDR. I&#8217;ve encountered some problems to access different technical websites :</p>
+
+<ul>
+<li>I have been forced to switch from French Ubuntu repositories to Malaysian one,</li>
+<li>http://mosh.mit.edu and http://octopress.org weren&#8217;t available,</li>
+<li>a lot of website stress me with the accusation I&#8217;m a bot, or spammer, and I am sometimes blacklisted (just as on Wikipedia)</li>
+<li>some more things are <em>weird</em></li>
+</ul>
+
+
+<p>I say weird because I can access to these sites through <a href="https://www.torproject.org/">Tor</a>.</p>
+
+<p><img src="http://smonff.github.io/images/posts/good_luck_7_proxies.png" alt="Connection to some websites are better through Tor" /></p>
+
+<blockquote><p>Tor is free software network for enabling on-line anonymity. Tor directs Internet traffic through a free, worldwide, volunteer network consisting of more than four thousand relays to conceal a user&#8217;s location or usage from anyone conducting network surveillance or traffic analysis. Using Tor makes it more difficult to trace Internet activity)</p><footer><strong>Tor Project Wikipedia page,</strong> <cite><a href='https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29'>en.wikipedia.org/wiki/&hellip;</a></cite></footer></blockquote>
+
+
+<p>Now each time I got troubles for accessing a part of the web I try through Tor: when it was impossible, it solves the problem most of the time, and when it&#8217;s too slow, it sometimes help. I&#8217;ve never felt the need of using an onion relay network (or <em>proxy</em>) in France, but it is necessary here.</p>
+
+<h4>Electricity and network disruptions</h4>
+
+<p>It&#8217;s not a daily thing, but for the first time in one week, we got a total district electricity failure that has begun in the morning and lasts in the afternoon.</p>
+
+<p>Electricity and network disruptions can be very localized : find a nice place to work in another district in case of emergency.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[How to log easily with Log::Minimal and File::Stamped ?]]></title>
-    <link href="http://smonff.github.com/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped/"/>
+    <link href="http://smonff.github.io/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped/"/>
     <updated>2013-09-24T18:00:00+07:00</updated>
-    <id>http://smonff.github.com/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped</id>
+    <id>http://smonff.github.io/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped</id>
     <content type="html"><![CDATA[<p>We love logs because it helps us to debug during development. We also need a quick way to enable / disable logs because it&#8217;s not necessary for everybody :</p>
 
 <ul>
@@ -104,7 +162,7 @@
 </span><span class='line'>
 </span><span class='line'><span class="nv">$ENV</span><span class="p">{</span><span class="n">LM_DEBUG</span><span class="p">}</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">my</span> <span class="nv">$work_path</span> <span class="o">=</span> <span class="nn">File::</span><span class="n">HomeDir_</span><span class="o">&gt;</span><span class="n">my_documents</span><span class="p">;</span>
+</span><span class='line'><span class="k">my</span> <span class="nv">$work_path</span> <span class="o">=</span> <span class="nn">File::</span><span class="n">HomeDir</span><span class="o">-&gt;</span><span class="n">my_documents</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">my</span> <span class="nv">$log_fh</span> <span class="o">=</span> <span class="nn">File::</span><span class="n">Stamped</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span>
 </span><span class='line'>  <span class="n">pattern</span> <span class="o">=&gt;</span> <span class="n">catdir</span><span class="p">(</span> <span class="nv">$work_path</span><span class="p">,</span> <span class="s">&quot;log.%Y-%m-%d.out&quot;</span><span class="p">),</span>
@@ -150,9 +208,9 @@
   
   <entry>
     <title type="html"><![CDATA[Post-Google RSS Reader era]]></title>
-    <link href="http://smonff.github.com/blog/2013/03/19/post-google-rss-reader-era/"/>
+    <link href="http://smonff.github.io/blog/2013/03/19/post-google-rss-reader-era/"/>
     <updated>2013-03-19T14:29:00+07:00</updated>
-    <id>http://smonff.github.com/blog/2013/03/19/post-google-rss-reader-era</id>
+    <id>http://smonff.github.io/blog/2013/03/19/post-google-rss-reader-era</id>
     <content type="html"><![CDATA[<p>Hey, <a href="http://googleblog.blogspot.fr/2013/03/a-second-spring-of-cleaning.html">Google announce it will close it&#8217;s RSS <em>Reader</em></a>.
 So what? Do we really need it anyway? You can find <a href="http://www.johndcook.com/blog/2013/03/14/rss-readers-on-linux/">plenty of friendly and beautiful clones of <em>Reader</em></a>, like <a href="http://feedly.com">Feedly</a> or <a href="http://theoldreader.com/">The Old Reader</a>. Both of two seems nice. Both of two are clearly Readers clones and alternatives.</p>
 
@@ -163,10 +221,7 @@ that I was feeling asleep as waiting for a feed to load. I don&#8217;t notice an
 
 <p>Then, when the Reader tragedy came, I&#8217;ve tryed <a href="http://feedly.com">Feedly</a>. Honestly, it seems wonderful. I&#8217;ve liked the <a href="https://play.google.com/store/apps/details?id=com.devhd.feedly">Android App</a>, hey it&#8217;s a wonderful tool. Everybody were recommanding it on the internet. It seems it&#8217;s gonna be my new RSS feeds reader. But this morning I read an <a href="https://twitter.com/LeaVerou/status/313394360412672000">interesting Lea Verou Tweet</a>:</p>
 
-<blockquote class="twitter-tweet" lang="fr"><p>So it looks like @<a href="https://twitter.com/feedly">feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.</p>&mdash; Lea Verou (@LeaVerou) <a href="https://twitter.com/LeaVerou/status/313394360412672000">17 mars 2013</a></blockquote>
-
-
-<script async src="http://smonff.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote><p>So it looks like @<a href="https://twitter.com/feedly">feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.</p><footer><strong>@LeaVerou</strong> <cite><a href='https://twitter.com/LeaVerou/status/313394360412672000'>twitter.com/LeaVerou/status/&hellip;</a></cite></footer></blockquote>
 
 
 <p>So. What if it will be true. What if Feedly disappear soon? It seems a good solution would be to select a good RSS feed free software like <a href="http://tt-rss.org/">Tiny Tiny RSS</a>, pick-up a random server, set-up a LAMP environment and make things by yourself (as describe in <a href="http://www.sebsauvage.net/rhaa/index.php?2013/03/15/17/15/39-arretez-de-pleurer-google-reader-hebergez-un-lecteur-rss-chez-vous">this sebsauvage post</a>&#8230; I mention <em>Tiny Tiny RSS</em> because it&#8217;s realy simple, customizable and feature <a href="http://f-droid.org/repository/browse/?fdfilter=rss&amp;fdid=org.fox.ttrss">a great Android client that communicate with an API on your server&#8217;s instance</a> featuring interesting synchronisation stuff.</p>
@@ -177,9 +232,9 @@ that I was feeling asleep as waiting for a feed to load. I don&#8217;t notice an
   
   <entry>
     <title type="html"><![CDATA[Need a Markdown editor for Android with Github support]]></title>
-    <link href="http://smonff.github.com/blog/2013/03/18/need-a-markdown-editor-for-android-with-github-support/"/>
+    <link href="http://smonff.github.io/blog/2013/03/18/need-a-markdown-editor-for-android-with-github-support/"/>
     <updated>2013-03-18T14:44:00+07:00</updated>
-    <id>http://smonff.github.com/blog/2013/03/18/need-a-markdown-editor-for-android-with-github-support</id>
+    <id>http://smonff.github.io/blog/2013/03/18/need-a-markdown-editor-for-android-with-github-support</id>
     <content type="html"><![CDATA[<p>This is my second blog post and I still need a Markdown editor for Android with Github support.</p>
 
 <p>Start to think to write it but I don&#8217;t need yet another side project. My phone is not rooted and can&#8217;t find a simple and free tool that support Markdown + Github.</p>
@@ -190,9 +245,9 @@ that I was feeling asleep as waiting for a feed to load. I don&#8217;t notice an
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://smonff.github.com/blog/2013/03/11/hello-world/"/>
+    <link href="http://smonff.github.io/blog/2013/03/11/hello-world/"/>
     <updated>2013-03-11T14:42:00+07:00</updated>
-    <id>http://smonff.github.com/blog/2013/03/11/hello-world</id>
+    <id>http://smonff.github.io/blog/2013/03/11/hello-world</id>
     <content type="html"><![CDATA[<p>This is my <a href="http://smonff@github.com">new blog</a>. It&#8217;s made with <a href="http://octopress.org">Octopress</a> and totally (software and content) <a href="https://github.com/smonff/smonff.github.com">open source</a>.</p>
 ]]></content>
   </entry>
