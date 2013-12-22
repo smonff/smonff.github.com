@@ -1,3 +1,9 @@
+Sources for the [Smonff's Shurfs](http://smonff.github.io) website, build with [Octopress](http://octopress.org).
+
+This blog is about developper stuffs, traveling while hacking, conceptual art and affective design.
+
+Content under free license (GNU Doc).
+
 ## What is Octopress?
 
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
