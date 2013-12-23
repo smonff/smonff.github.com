@@ -12,6 +12,8 @@ We love logs because it helps us to debug during development. We also need a qui
 
 When testing a module and building a distribution, you maybe don't want to inject *dirt* in your tests output. In the case of debuging, I think it's a good thing to write it to a file and `tail` on it.
 
+<!--more-->
+
 We're gonna use two CPAN's modules, [Log::Minimal](https://metacpan.org/module/Log::Minimal), a *minimal but custimizable logger* and [File::Stamped](https://metacpan.org/module/File::Stamped), that allows *stamped log file*. They are not supposed to be build together, but Tokuhiro Matsuno(`File::Stamped` creator) recommend `Log::Minimal` in a code example.
 
 My aim was to create a log system for the debug moment, because I was boring of using `p()` function from [Data::Printer](https://metacpan.org/module/Data::Printer) during my development and tests, because it was a bad thing: I was constantly adding and moving debug-print-code, that is a bad practice because it makes you repeat stupid tasks and encourage to test in a random way. I took a look at CPAN and Stack Overflow for some logging solutions, and [Log::Log4Perl](https://metacpan.org/module/Log::Log4perl) seems to be a recommended solution for most of serious apps. But it seems to much complicated to me, I don't want to manage a new conf file, etc.

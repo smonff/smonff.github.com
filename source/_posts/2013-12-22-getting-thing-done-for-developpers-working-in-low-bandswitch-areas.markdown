@@ -28,6 +28,8 @@ Once I asked to the couple who sold me the cards where I can get bigger or unlim
 * Some websites are hardly accessible, I don't know if they are *locked* or *censored*, or only hosted on too far away servers (?)
 * network and / or electricity can be down
 
+<!--more-->
+
 ### Solutions to problems
 #### Mosh
 ![Never let you abuse by stuff that shouldn't happen](/images/posts/broken_pipe.jpg)
