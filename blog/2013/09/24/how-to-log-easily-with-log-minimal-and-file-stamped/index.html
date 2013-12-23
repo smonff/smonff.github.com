@@ -117,6 +117,9 @@ $(function(){
 
 <p>When testing a module and building a distribution, you maybe don&#8217;t want to inject <em>dirt</em> in your tests output. In the case of debuging, I think it&#8217;s a good thing to write it to a file and <code>tail</code> on it.</p>
 
+<!--more-->
+
+
 <p>We&#8217;re gonna use two CPAN&#8217;s modules, <a href="https://metacpan.org/module/Log::Minimal">Log::Minimal</a>, a <em>minimal but custimizable logger</em> and <a href="https://metacpan.org/module/File::Stamped">File::Stamped</a>, that allows <em>stamped log file</em>. They are not supposed to be build together, but Tokuhiro Matsuno(<code>File::Stamped</code> creator) recommend <code>Log::Minimal</code> in a code example.</p>
 
 <p>My aim was to create a log system for the debug moment, because I was boring of using <code>p()</code> function from <a href="https://metacpan.org/module/Data::Printer">Data::Printer</a> during my development and tests, because it was a bad thing: I was constantly adding and moving debug-print-code, that is a bad practice because it makes you repeat stupid tasks and encourage to test in a random way. I took a look at CPAN and Stack Overflow for some logging solutions, and <a href="https://metacpan.org/module/Log::Log4perl">Log::Log4Perl</a> seems to be a recommended solution for most of serious apps. But it seems to much complicated to me, I don&#8217;t want to manage a new conf file, etc.</p>

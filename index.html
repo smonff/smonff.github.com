@@ -7,7 +7,7 @@
 	<meta name="author" content="Smonff">
 
 	
-	<meta name="description" content="Getting Things Done for Developers Working in Low-band-switch Areas Now I have been in Lao PDR and I don&#8217;t got my high-speed Internet &hellip;">
+	<meta name="description" content="Getting Things Done for Developers Working in Low-band-switch Areas I have been in Lao PDR for a week and I don&#8217;t have my high-speed Internet &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,15 +97,15 @@ $(function(){
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
 	<h1 class="title" itemprop="name"><a href="/blog/2013/12/22/getting-thing-done-for-developpers-working-in-low-bandswitch-areas/" itemprop="url">Getting Things Done for Developers Working in Low-band-switch Areas</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<p>Now I have been in <a href="https://en.wikipedia.org/wiki/Lao_PDR">Lao PDR</a> and I don&#8217;t got my high-speed Internet connection. All I have is a cool smartphone without a SIM card for this country. Though, it doesn&#8217;t seem to be a problem to find a SIM card: just before the immigration point in airport, the application form already features an ad for <a href="http://www.beeline.la/">one of the main telecoms company</a> saying that  <em>to really communicate like a local</em>, I should choose subscribe to that company.</p>
+		<p>I have been in <a href="https://en.wikipedia.org/wiki/Lao_PDR">Lao PDR</a> for a week and I don&#8217;t have my high-speed Internet connection. All I have is a cool smartphone without a SIM card for this country. Though, it doesn&#8217;t seem to be a problem to find a SIM card: just before the immigration point in airport, the application form already mentions an ad for <a href="http://www.beeline.la/">one of the main telecoms company</a> saying that  <em>to really communicate like a local</em>, I should subscribe to that company.</p>
 
 <h2>Get an unlimited data plan</h2>
 
-<p>Anyway, I have to work for my <a href="http://etyssa.fr">french company</a> (that kindly grants me some holidays, just in time to empty my french flat and have some time to find electricity and Internet connection in Lao PDR) just before getting back to work.</p>
+<p>Anyway, I have to work for my <a href="http://etyssa.fr">french company</a> (that kindly grants me some holidays, just in time to empty my french flat and have some time to find electricity and Internet connection in Lao PDR), just before getting back to work.</p>
 
-<p>Finding a new SIM card is not a problem (you can literally find credit sellers for mobile phones at <em>each street corner</em>), and you don&#8217;t even need to give an address or have a bank account. The main problem is you don&#8217;t speak Lao, and Lao people don&#8217;t speak English that much. So maybe they will not understand you need this killer-unlimited-data-plan and give you some <em>re-loadable</em> cards. Anyway, you don&#8217;t speak Lao either&#8230;</p>
+<p>Finding a SIM card is not a problem (you can literally find credit sellers for mobile phones at <em>each street corner</em>), and you don&#8217;t even need to give an address or have a bank account. The main problem is you don&#8217;t speak Lao, and Lao people don&#8217;t speak English that much. So maybe they will not understand you need this killer-unlimited-data-plan and give you some cheap <em>re-loadable</em> cards. Anyway, you don&#8217;t speak Lao either&#8230;</p>
 
-<p>You will understand very soon that unlimited data plan, including phone calls and SMS like the one I previously used with <a href="http://free.fr">Free</a> in France is not that easy to find. 5 x 50 000 kips (5€) cards later and two days of surfing has been enough to empty my cards :( , that was supposed to allow 2.5G of data.</p>
+<p>You will understand very soon that unlimited data plan, including phone calls and SMS like the one I previously used with <a href="http://free.fr">Free</a> in France is not that easy to find. 5 x 50 000 kips (5€) cards later and two days of shurfing has been enough to empty my cards :( , that was supposed to allow 2.5G of data.</p>
 
 <h2>First sensations</h2>
 
@@ -122,60 +122,9 @@ $(function(){
 </ul>
 
 
-<h3>Solutions to problems</h3>
-
-<h4>Mosh</h4>
-
-<p><img src="/images/posts/broken_pipe.jpg" alt="Never let you abuse by stuff that shouldn't happen" /></p>
-
-<p>First, I was very worried about SSH <em>availability</em>. A friend tried it for me from Laos before my departure, and the stuff seems to be OK. But I&#8217;ve forgot something: SSH is not that lightweight, mainly because of it&#8217;s strong encryption.</p>
-
-<p>Another friend adviced me to use <a href="http://mosh.mit.edu">Mosh</a> :</p>
-
-<blockquote><p>Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes.</p><p>Mosh is a replacement for SSH. It&#8217;s more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.</p><footer><strong>Mosh contributors,</strong> <cite><a href='http://mosh.mit.edu'>mosh.mit.edu/&hellip;</a></cite></footer></blockquote>
-
-
-<p>And Mosh is absolutely incredible&#8230;</p>
-
-<p> SSH was almost unusable, and even dangerous because of the latency time I&#8217;ve experimented that could increase typing errors. Mosh seems to be the best solution for mobile workers that need a connection to a remote SSH server because of two of it&#8217;s main features :</p>
-
-<ul>
-<li><strong>roaming connection</strong>. You can literally switch to a connection to another and the connection between the local and distant Mosh servers will be maintained.</li>
-<li><strong>predictive typing</strong>. As the connection will be slow, typing through SSH will have a long latency (this makes me very angry). Predictive typing will reduce the latency in an awesome way, you can&#8217;t almost feel it. In their own words, the stuff <em>get rid of network lag</em>.</li>
-</ul>
-
-
-<p>My life has been changed the day I discovered <a href="https://en.wikipedia.org/wiki/Tmux">Tmux</a>. I believe the use of Tmux + Mosh will make your life easier if you telecommute in uncommon places, have to switch connections easily or simply hibernate your computer without experiment some <em>broken pipe</em> horrors.</p>
-
-<h4>Tor</h4>
-
-<p>I don&#8217;t know how the Web could be controlled in Lao PDR. I&#8217;ve encountered some problems to access different technical websites :</p>
-
-<ul>
-<li>I have been forced to switch from French Ubuntu repositories to Malaysian one,</li>
-<li>http://mosh.mit.edu and http://octopress.org weren&#8217;t available,</li>
-<li>lots of website stress me with the accusation I&#8217;m a bot, or spammer, and I am sometimes blacklisted (just as on Wikipedia)</li>
-<li>some more things are <em>weird</em></li>
-</ul>
-
-
-<p>I say weird because I can access to these sites through <a href="https://www.torproject.org/">Tor</a>.</p>
-
-<p><img src="/images/posts/good_luck_7_proxies.png" alt="Connection to some websites are better through Tor" /></p>
-
-<blockquote><p>Tor is free software network for enabling on-line anonymity. Tor directs Internet traffic through a free, worldwide, volunteer network consisting of more than four thousand relays to conceal a user&#8217;s location or usage from anyone conducting network surveillance or traffic analysis. Using Tor makes it more difficult to trace Internet activity)</p><footer><strong>Tor Project Wikipedia page,</strong> <cite><a href='https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29'>en.wikipedia.org/wiki/&hellip;</a></cite></footer></blockquote>
-
-
-<p>Now each time I got troubles for accessing a part of the web I try through Tor: when it was impossible, it solves the problem most of the time, and when it&#8217;s too slow, it sometimes helps. I&#8217;ve never felt the need of using an onion relay network (or <em>proxy</em>) in France, but it is necessary here.</p>
-
-<h4>Electricity and network disruptions</h4>
-
-<p>It&#8217;s not a daily thing, but for the first time in one week, we got a total district electricity failure that began in the morning and lasted until the afternoon.</p>
-
-<p>Electricity and network disruptions can be very localized : find a nice place to work in another district in case of emergency.</p>
 
 		
-		
+		<a href="/blog/2013/12/22/getting-thing-done-for-developpers-working-in-low-bandswitch-areas/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>
@@ -194,101 +143,9 @@ $(function(){
 
 <p>When testing a module and building a distribution, you maybe don&#8217;t want to inject <em>dirt</em> in your tests output. In the case of debuging, I think it&#8217;s a good thing to write it to a file and <code>tail</code> on it.</p>
 
-<p>We&#8217;re gonna use two CPAN&#8217;s modules, <a href="https://metacpan.org/module/Log::Minimal">Log::Minimal</a>, a <em>minimal but custimizable logger</em> and <a href="https://metacpan.org/module/File::Stamped">File::Stamped</a>, that allows <em>stamped log file</em>. They are not supposed to be build together, but Tokuhiro Matsuno(<code>File::Stamped</code> creator) recommend <code>Log::Minimal</code> in a code example.</p>
-
-<p>My aim was to create a log system for the debug moment, because I was boring of using <code>p()</code> function from <a href="https://metacpan.org/module/Data::Printer">Data::Printer</a> during my development and tests, because it was a bad thing: I was constantly adding and moving debug-print-code, that is a bad practice because it makes you repeat stupid tasks and encourage to test in a random way. I took a look at CPAN and Stack Overflow for some logging solutions, and <a href="https://metacpan.org/module/Log::Log4perl">Log::Log4Perl</a> seems to be a recommended solution for most of serious apps. But it seems to much complicated to me, I don&#8217;t want to manage a new conf file, etc.</p>
-
-<p>As <code>Log::Minimal</code> seems to be really simple to use, I&#8217;ve installed it and was very satisfacted of it quickly. Now, we are going to see how to use it to create a temporary file that will contain the traces.</p>
-
-<figure class='code'><figcaption><span>Install the modules :D</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>cpanm Log::Minimal File::Stamped
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>Log some stuff to a file</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="k">use</span> <span class="n">strict</span><span class="p">;</span>
-</span><span class='line'><span class="k">use</span> <span class="n">warnings</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">use</span> <span class="nn">Log::</span><span class="n">Minimal</span><span class="p">;</span>
-</span><span class='line'><span class="k">use</span> <span class="nn">File::</span><span class="n">Stamped</span><span class="p">;</span>
-</span><span class='line'><span class="k">use</span> <span class="nn">File::</span><span class="n">HomeDir</span><span class="p">;</span>
-</span><span class='line'><span class="k">use</span> <span class="nn">File::Spec::</span><span class="n">Function</span> <span class="sx">qw(catdir catfile)</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">$ENV</span><span class="p">{</span><span class="n">LM_DEBUG</span><span class="p">}</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">my</span> <span class="nv">$work_path</span> <span class="o">=</span> <span class="nn">File::</span><span class="n">HomeDir</span><span class="o">-&gt;</span><span class="n">my_documents</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">my</span> <span class="nv">$log_fh</span> <span class="o">=</span> <span class="nn">File::</span><span class="n">Stamped</span><span class="o">-&gt;</span><span class="k">new</span><span class="p">(</span>
-</span><span class='line'>  <span class="n">pattern</span> <span class="o">=&gt;</span> <span class="n">catdir</span><span class="p">(</span> <span class="nv">$work_path</span><span class="p">,</span> <span class="s">&quot;log.%Y-%m-%d.out&quot;</span><span class="p">),</span>
-</span><span class='line'><span class="p">);</span>
-</span><span class='line'>  
-</span><span class='line'><span class="c1"># Overrides Log::Minimal PRINT method</span>
-</span><span class='line'><span class="nv">$</span><span class="nn">Log::Minimal::</span><span class="nv">PRINT</span> <span class="o">=</span> <span class="k">sub </span><span class="p">{</span>
-</span><span class='line'>  <span class="k">my</span> <span class="p">(</span> <span class="nv">$time</span><span class="p">,</span> <span class="nv">$type</span><span class="p">,</span> <span class="nv">$message</span><span class="p">,</span> <span class="nv">$trace</span><span class="p">)</span> <span class="o">=</span> <span class="nv">@_</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1"># Removed $trace because it was too long in my environment</span>
-</span><span class='line'>  <span class="k">print</span> <span class="p">{</span><span class="nv">$log_fh</span><span class="p">}</span> <span class="s">&quot;$time [$type] $message\n&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">debugf</span><span class="p">(</span><span class="s">&quot;My::Module debugger init.&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="n">debugf</span><span class="p">(</span><span class="s">&quot;Other&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="n">debugf</span><span class="p">(</span><span class="s">&quot;interestant&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="n">debugf</span><span class="p">(</span><span class="s">&quot;things...&quot;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you <code>tail</code> to <code>/home/user/Documents/log.2013-09-24.out</code> (adjust this to your own OS) from your terminal during your module tests&#8230;</p>
-
-<figure class='code'><figcaption><span>tail</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tail -vf /home/user/Douments/log.2013-09-24.out
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>&#8230; it will log the following :</p>
-
-<figure class='code'><figcaption><span>out</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>2013-09-24T19:28:38 [DEBUG] My::Module debugger init.
-</span><span class='line'>2013-09-24T19:28:39 [DEBUG] Other
-</span><span class='line'>2013-09-24T19:28:39 [DEBUG] interestant
-</span><span class='line'>2013-09-24T19:28:39 [DEBUG] things...</span></code></pre></td></tr></table></div></figure>
-
-
-<p>That was a very <em>minimal</em> blog post, but I hope it could be usefull. Thanx to nmishin for cross-platforming advices !</p>
 
 		
-		
+		<a href="/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>
