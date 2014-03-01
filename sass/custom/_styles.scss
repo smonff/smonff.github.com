@@ -1,2 +1,21 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+.code, .gutter .line-numbers {
+  font-size: 90%;
+}
+
+.gutter .line-numbers {
+  color: #93A1A1;
+}
+
+li {
+  margin-left: 10px;
+}
+
+article h1.title {
+  line-height: 35px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #5F5F59;
+}

@@ -7,8 +7,9 @@ html {
 body {
 	background: #33332D;
 	font-family: "Roboto Slab", "Open Sans", "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #33332D;
+        color: #33332D;
 	height: 100%;
+        font-size: 100%;
 }
 
 ::selection, ::-moz-selection, ::-webkit-selection {
@@ -391,3 +392,4 @@ body {
 		}
 	}
 }
+

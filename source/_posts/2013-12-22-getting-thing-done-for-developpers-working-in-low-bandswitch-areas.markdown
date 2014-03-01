@@ -53,7 +53,7 @@ SSH was almost unusable, and even dangerous because of the latency time I've exp
 My life has been changed the day I discovered [Tmux](https://en.wikipedia.org/wiki/Tmux). I believe the use of Tmux + Mosh will makes your life easier if you telecommute in uncommon places, have to switch between connections easily or simply hibernate your computer without experiment some *broken pipe* horrors.
 
 #### Tor
-I don't know how the Web could be controlled in Lao PDR. I've encountered some problems to access different technical websites :
+I don't know how the Web's informations could be controlled in Lao PDR. I've encountered some problems to access different technical websites :
 
 * I have been forced to switch from French Ubuntu repositories to Malaysian one,
 * http://mosh.mit.edu and http://octopress.org weren't available,
@@ -69,6 +69,8 @@ Tor is free software network for enabling on-line anonymity. Tor directs Interne
 {% endblockquote %}
 
 Now each time I got troubles for accessing a part of the web I try through Tor: when it was impossible, it solves the problem most of the time, and when it's too slow, it (strangely) helps. I've never felt the need of using an onion relay network (or *proxy*) in France, but it is necessary here.
+
+More readings for those who wants to know more about what is a proxy.
 
 #### Electricity and network disruptions
 It's not a daily thing, but for the first time in one week, we got a total district electricity failure that began in the morning and lasted until the afternoon. 

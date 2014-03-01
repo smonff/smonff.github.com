@@ -4,6 +4,7 @@ title: "How I transformed this dirty script into a full module distribution"
 date: 2014-02-26 11:27
 comments: true
 categories: [module, perl]
+featured: "/images/posts/cpan_start_build_space_rockets.jpg"
 published: false
 ---
 
@@ -78,6 +79,8 @@ This is the moment when experimented hackers got one liners that are supposed to
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 One liners are great... Sometimes. Problems with one liners is that you can't remember them, so you have to bookmark it, but you've got so many bookmarks that you will even not found it back when neccessary. More, how can you trust oneliners ? 
+
+After weeks of work and the one-liner, you will surely find some [smart code that do the job in an incredibly simpliest way that you did](https://github.com/book/Act/blob/master/t/01dependencies.t). But meeeew, TIMTOWTDI !
 
 ## Things are not that easy 
 When development progress, things that you don't even think of before occurs and create problems. When you are a beginner, it can be a pain, but if you have a strong motivation, you can learn very quick. That's why I believe a large part of programming today is not fully about optimized code and performance by about culture, conventions and readability.
