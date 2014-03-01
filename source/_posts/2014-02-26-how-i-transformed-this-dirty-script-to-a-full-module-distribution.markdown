@@ -4,7 +4,7 @@ title: "How I transformed this dirty script into a full module distribution"
 date: 2014-02-26 11:27
 comments: true
 categories: [module, perl]
-featured: "/images/posts/cpan_start_build_space_rockets.jpg"
+featured: "/images/posts/CPAN_start_building_space_rockets.jpg"
 published: false
 ---
 
@@ -38,17 +38,58 @@ The interresting way is to use some existing modules to create something new. Fo
 As we will see in part 2, things are not that easy, but using the tools written by others will makes things easier, because most of the tools you will find on CPAN have been developed by a community of developers, debuged, patched and step by step designed as better and better by each of this community. It's now time to proceed as them, and make your work available to the world.
 
 ## Starting not exactly from scratch
-You will first need to 
-Module::Starter
+To start building a module, you will need a distribution architecture. Typical distribution look like the following : 
+
+    Foo-Bar/
+	├── Changes
+	├── lib
+	│   └── Foo
+	|       ├── Bar.pm
+	│       └── Bat.pm
+	├── Makefile.PL
+	├── MANIFEST
+	├── README
+	└── t
+	    ├── 00-load.t
+		├── boilerplate.t
+		├── manifest.t
+		├── pod-coverage.t
+		└── pod.t
+						
+
+The full distribution directories and files tree, a lot of boilerplate code, and the module squeleton, containing documentation and licences templates can be generated automatically using `Module::Starter` (not part of a Perl core). 
+
+    $ cpanm Module::Starter Module::Starter::Smart
+    $ module-starter --module=Foo::Bar,Foo::Bat --author="Sébastien Feugère" --email=smonf@cpan.org
+	
+Much more arguments can be used, so please considere reading `perldoc Module::Starter`.
+	
+	# First argument is the module to add, second is the existing distro (don't use `::` separator)
+    $ module-starter --module=Foo::Bar::Me --distro=Foo-Bar  
+
+`Module::Starter::Smart` allows to *add new modules into an existing distribution*, a thing that is not permitted by `Module::Starter`. It will be usefull if your distribution grows up all along your development process. You are not supposed to know all your distribution architecture at it's begining.
+
+This is definitively a way to get a common architecture for your distribution and start to speak the common language of CPAN.
 
 ## Testing
 
 ## Documentatation
-Tests ARE documentation
+* Tests ARE documentation
+* README matters (if readme is just like shit, there is more chances that your module smells like shit too)
 
 ## Deploying 
+Deploying to CPAN open new fields in Perl development :
 
-* Brian d Foy slides
+* you can test your module on a large variety of Perl versions (Perltesters)
+* others can install your module through `cpanm` easily
+
+Brian d Foy said :
+
+> Upload early and often
+>
+> * You don't have to be perfect, or even good
+> * Other people can help as soon as possible
+> * CPAN Testers can send you feedback
 
 ## Cpantesters
 
@@ -70,6 +111,10 @@ I would like to thank [Neil Bowers](https://twitter.com/neilbowers) who suggests
 * What makes a "good module?
 
 Next post will be answer the question *what makes a **good module***.
+
+# References
+
+* *Uploading Your First Module to CPAN, brian d foy, The Perl Review, YAPC::EU 2011, Riga* is a valuable document, quick to read and full of wonderful tools
 
 # What makes a good module ( Part 2 notes )
 ## The moment of depresssion
