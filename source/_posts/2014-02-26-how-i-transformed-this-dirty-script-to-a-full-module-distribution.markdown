@@ -73,8 +73,9 @@ This is definitively a way to get a common architecture for your distribution an
 
 ## Testing
 
-## Documentatation
-* Tests ARE documentation
+## Documentation
+* POD in code
+* Tests *ARE also* documentation
 * README matters (if readme is just like shit, there is more chances that your module smells like shit too)
 
 ## Deploying 
@@ -114,7 +115,7 @@ Next post will be answer the question *what makes a **good module***.
 
 # References
 
-* *Uploading Your First Module to CPAN, brian d foy, The Perl Review, YAPC::EU 2011, Riga* is a valuable document, quick to read and full of wonderful tools
+* *[Uploading Your First Module to CPAN](http://fr.slideshare.net/brian_d_foy/create-and-upload-to-cpan), brian d foy, The Perl Review, YAPC::EU 2011, Riga* is a valuable document, quick to read and full of wonderful tools
 
 # What makes a good module ( Part 2 notes )
 ## The moment of depresssion
