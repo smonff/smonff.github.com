@@ -4,7 +4,7 @@
   <title><![CDATA[Smonff Shurfs]]></title>
   <link href="http://smonff.github.io/atom.xml" rel="self"/>
   <link href="http://smonff.github.io/"/>
-  <updated>2014-03-23T18:17:21+07:00</updated>
+  <updated>2014-03-23T18:18:50+07:00</updated>
   <id>http://smonff.github.io/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
@@ -147,6 +147,7 @@ title: &#8220;Why I regularly switch between Firefox and Chrome and why it&#8217
 date: 2014-02-06 10:51
 comments: true
 categories: firefox, chrome, browser, slow
+published: false
 __</p>
 
 <p>I still try to use Firefox because it is a great Free Software and I like it. But sometimes, it become damn slow, and the temptation to use Chrome is high, because it is so speed !</p>
