@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: perlbrew | Smonff Shurfs]]></title>
+  <link href="http://smonff.github.io/blog/categories/perlbrew/atom.xml" rel="self"/>
+  <link href="http://smonff.github.io/"/>
+  <updated>2014-03-23T18:17:21+07:00</updated>
+  <id>http://smonff.github.io/</id>
+  <author>
+    <name><![CDATA[Smonff]]></name>
+    <email><![CDATA[smonff@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Using Perlbrew on Ubuntu]]></title>
+    <link href="http://smonff.github.io/blog/2014/03/23/using-perlbrew-on-ubuntu/"/>
+    <updated>2014-03-23T13:33:00+07:00</updated>
+    <id>http://smonff.github.io/blog/2014/03/23/using-perlbrew-on-ubuntu</id>
+    <content type="html"><![CDATA[<p>Today I discovered that I was using <a href="https://metacpan.org/pod/release/FLORA/perl-5.14.2/pod/perl.pod">Perl 5, version 14.2</a> from the Ubuntu 12.04 packages (v5.14.2). It includes 57 registered patches. As it is a 2011 version, I've decided to switch from the Ubuntu packages that to a more recent one (and considered as stable by the Perl community).</p>
+
+<p>As I love to use <code>local::lib</code> and <code>cpanm</code>, a possible way to install this 5.18.2 last stable version, I've choosed to use <a href="http://perlbrew.pl/"><code>Perlbrew</code></a> to achieve this. The tool seems as convenient as <code>cpanm</code> and <code>local::lib</code>.</p>
+
+<p><code>Perlbrew</code> is :</p>
+
+<ul>
+<li><em>a tool to install different verisons of perls</em></li>
+<li><em>an admin-free installation management</em> system, means, as for local::lib, you don't even need to have sudo rights to use it, so you don't have to suck the admin's ass</li>
+<li>just like <code>RVM</code> for those who knows Ruby</li>
+</ul>
+
+
+<p>The reason I write this post is that I encountered a tiny problem when installing <code>Perlbrew</code> on an Ubuntu box, so I hope it could be useful for you.</p>
+
+<p>I assume that you already have <code>cpanm</code> and <code>local::lib</code> installed (no <code>root</code>).</p>
+
+<p>We install <code>Perlbrew</code> :</p>
+
+<pre><code>$ cpanm perlbrew
+</code></pre>
+
+<p>Then, we initialize it's environment. Don't forget this part or it won't work :</p>
+
+<pre><code>$ perlbrew init
+
+perlbrew root (~/perl5/perlbrew) is initialized.
+
+Append the following piece of code to the end of your ~/.bash_profile and start a
+new shell, perlbrew should be up and fully functional from there:
+
+    source ~/perl5/perlbrew/etc/bashrc
+
+Simply run `perlbrew` for usage details.
+
+Happy brewing!
+</code></pre>
+
+<p>It create some files in <code>~/.perlbrew</code>. You need to add the one that fit your environment in your configuration file (<code>.bashrc</code> or other) :</p>
+
+<pre><code># In .bashrc
+source ~/perl5/perlbrew/etc/bashrc
+</code></pre>
+
+<p>Now start a new shell or <code>source</code> your configuration file, that's it ! You can check wich Perls are available :</p>
+
+<pre><code>$ perlbrew available
+  perl-5.19.10
+  perl-5.18.2
+  perl-5.16.3
+  perl-5.14.4
+  perl-5.12.5
+  perl-5.10.1
+  perl-5.8.9
+  perl-5.6.2
+  perl5.005_04
+  perl5.004_05
+  perl5.003_07
+</code></pre>
+
+<p>So pick a version, or ask for the last <em>stable</em>. In fact, that's the moment I encountered an issue with <code>Perlbrew</code> and <code>Devel::PatchPerl.pm</code>. I asked for the installation of last stable Perl but it failed :</p>
+
+<pre><code>$ perlbrew install stable
+Installing /home/smonff/perl5/perlbrew/build/perl-5.18.2 into
+~/perl5/perlbrew/perls/perl-5.18.2
+
+This could take a while. You can run the following command on
+another shell to track the status:
+
+  tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
+
+Installation process failed. To spot any issues, check
+
+  /home/smonff/perl5/perlbrew/build.perl-5.18.2.log
+
+If some perl tests failed and you still want install this
+distribution anyway, do:
+
+  (cd /home/smonff/perl5/perlbrew/build/perl-5.18.2; make install)
+
+You might also want to try upgrading patchperl before trying again:
+
+  perlbrew install-patchperl
+
+Generally, if you need to install a perl distribution known to
+have minor test failures, do one of these command to avoid seeing this message
+
+  perlbrew --notest install stable
+  perlbrew --force install stable
+</code></pre>
+
+<p>As the process was failing, I've tailed the logs :</p>
+
+<pre><code>tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
+Can't locate Devel/PatchPerl.pm in @INC (@INC contains: /etc/perl 
+/usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2
+/usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 
+/usr/share/perl/5.14 /usr/local/lib/site_perl .) at 
+/home/smonff/perl5/bin/patchperl line 12.
+BEGIN failed--compilation aborted at /home/smonff/perl5/bin/patchperl line 12.
+</code></pre>
+
+<p>Finally, I found the answer on <a href="http://stackoverflow.com/questions/16113467/perlbrew-fails-with-cant-locate-devel-patchperl-pm">StackOverflow</a>, even if it was clearly mentioned in the <code>Perlbrew</code> logs, you should better read sentences to the end :</p>
+
+<pre><code>$ perlbrew install-patchperl  
+</code></pre>
+
+<p>I've tryied to update a <code>Devel::PatchPerl</code> before but updating stupidely without understanding or before reading the doc is useless.Perlbrew seems to embark it's own <code>Devel::PatchPerl</code> in <code>~/perl5/perlbrew/bin</code>, that's why it conflicts with the core version.</p>
+
+<p>Now you got this enviroment ready, you can install Perl very very easily :</p>
+
+<pre><code>$ perlbrew install stable 
+perl-5.18.2 is successfully installed.
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>

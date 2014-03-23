@@ -7,7 +7,7 @@
 	<meta name="author" content="Smonff">
 
 	
-	<meta name="description" content="Getting Things Done for Developers Working in Low-band-switch Areas I have been in Lao PDR for a week and I don&#8217;t have my high-speed Internet &hellip;">
+	<meta name="description" content="Using Perlbrew on Ubuntu Today I discovered that I was using Perl 5, version 14.2 from the Ubuntu 12.04 packages (v5.14.2). It includes 57 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -37,6 +37,8 @@
 			<header id="header" class="inner"><nav id="main-nav"><ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <!--<li><a href="/cv">CV</a></li>
+  <li><a href="/about">About</a></li>-->
 </ul>
 </nav>
 <nav id="sub-nav">
@@ -73,13 +75,8 @@ $(function(){
   
   <p class="site-subtitle">Yet another blog about tech while traveling</p>
   
-  </hgroup>
-  <hgroup>
-  <h1><a href="/">Smonff Shurfs</a></h1>
-  
-    <h2>Yet another blog about tech while traveling</h2>
-  
 </hgroup>
+
 
 </div>
 </header>
@@ -95,36 +92,155 @@ $(function(){
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name"><a href="/blog/2013/12/22/getting-thing-done-for-developpers-working-in-low-bandswitch-areas/" itemprop="url">Getting Things Done for Developers Working in Low-band-switch Areas</a></h1>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/03/23/using-perlbrew-on-ubuntu/" itemprop="url">Using Perlbrew on Ubuntu</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<p>I have been in <a href="https://en.wikipedia.org/wiki/Lao_PDR">Lao PDR</a> for a week and I don&#8217;t have my high-speed Internet connection. All I have is a cool smartphone without a SIM card for this country. Though, it doesn&#8217;t seem to be a problem to find a SIM card: just before the immigration point in airport, the application form already mentions an ad for <a href="http://www.beeline.la/">one of the main telecoms company</a> saying that  <em>to really communicate like a local</em>, I should subscribe to that company.</p>
+		<p>Today I discovered that I was using <a href="https://metacpan.org/pod/release/FLORA/perl-5.14.2/pod/perl.pod">Perl 5, version 14.2</a> from the Ubuntu 12.04 packages (v5.14.2). It includes 57 registered patches. As it is a 2011 version, I&#8217;ve decided to switch from the Ubuntu packages that to a more recent one (and considered as stable by the Perl community).</p>
 
-<h2>Get an unlimited data plan</h2>
+<p>As I love to use <code>local::lib</code> and <code>cpanm</code>, a possible way to install this 5.18.2 last stable version, I&#8217;ve choosed to use <a href="http://perlbrew.pl/"><code>Perlbrew</code></a> to achieve this. The tool seems as convenient as <code>cpanm</code> and <code>local::lib</code>.</p>
 
-<p>Anyway, I have to work for my <a href="http://etyssa.fr">french company</a> (that kindly grants me some holidays, just in time to empty my french flat and have some time to find electricity and Internet connection in Lao PDR), just before getting back to work.</p>
-
-<p>Finding a SIM card is not a problem (you can literally find credit sellers for mobile phones at <em>each street corner</em>), and you don&#8217;t even need to give an address or have a bank account. The main problem is you don&#8217;t speak Lao, and Lao people don&#8217;t speak English that much. So maybe they will not understand you need this killer-unlimited-data-plan and give you some cheap <em>re-loadable</em> cards. Anyway, you don&#8217;t speak Lao either&#8230;</p>
-
-<p>You will understand very soon that unlimited data plan, including phone calls and SMS like the one I previously used with <a href="http://free.fr">Free</a> in France is not that easy to find. 5 x 50 000 kips (5€) cards later and two days of shurfing has been enough to empty my cards :( , that was supposed to allow 2.5G of data.</p>
-
-<h2>First sensations</h2>
-
-<p>Once I asked to the couple who sold me the cards where I can get bigger or unlimited ones, they redirected me to the nearest <a href="http://laotel.com/home_Lao.html">Lao Telecoms</a> office where people were able to advice me a decent unlimited data-plan (still in alpha-test for me). Some impressions about it :</p>
+<p><code>Perlbrew</code> is :</p>
 
 <ul>
-<li>SSH is available through the phone hotspot but pretty slow</li>
-<li>band-switch is pretty good</li>
-<li>no outgoing SMTP (or don&#8217;t find it for my current ISP)</li>
-<li>some obtained IPs seems to be considered as potentially dangerous (open proxies, low reputation for spam, e.g. blacklisted on Wikipedia)</li>
-<li>band-switch speed is bipolar</li>
-<li>Some websites are hardly accessible, I don&#8217;t know if they are <em>locked</em> or <em>censored</em>, or only hosted on too far away servers (?)</li>
-<li>network and / or electricity can be down</li>
+<li><em>a tool to install different verisons of perls</em></li>
+<li><em>an admin-free installation management</em> system, means, as for local::lib, you don&#8217;t even need to have sudo rights to use it, so you don&#8217;t have to suck the admin&#8217;s ass</li>
+<li>just like <code>RVM</code> for those who knows Ruby</li>
 </ul>
 
 
+<p>The reason I write this post is that I encountered a tiny problem when installing <code>Perlbrew</code> on an Ubuntu box, so I hope it could be useful for you.</p>
+
+<p>I assume that you already have <code>cpanm</code> and <code>local::lib</code> installed (no <code>root</code>).</p>
+
+<p>We install <code>Perlbrew</code> :</p>
+
+<pre><code>$ cpanm perlbrew
+</code></pre>
+
+<p>Then, we initialize it&#8217;s environment. Don&#8217;t forget this part or it won&#8217;t work :</p>
+
+<pre><code>$ perlbrew init
+
+perlbrew root (~/perl5/perlbrew) is initialized.
+
+Append the following piece of code to the end of your ~/.bash_profile and start a
+new shell, perlbrew should be up and fully functional from there:
+
+    source ~/perl5/perlbrew/etc/bashrc
+
+Simply run `perlbrew` for usage details.
+
+Happy brewing!
+</code></pre>
+
+<p>It create some files in <code>~/.perlbrew</code>. You need to add the one that fit your environment in your configuration file (<code>.bashrc</code> or other) :</p>
+
+<pre><code># In .bashrc
+source ~/perl5/perlbrew/etc/bashrc
+</code></pre>
+
+<p>Now start a new shell or <code>source</code> your configuration file, that&#8217;s it ! You can check wich Perls are available :</p>
+
+<pre><code>$ perlbrew available
+  perl-5.19.10
+  perl-5.18.2
+  perl-5.16.3
+  perl-5.14.4
+  perl-5.12.5
+  perl-5.10.1
+  perl-5.8.9
+  perl-5.6.2
+  perl5.005_04
+  perl5.004_05
+  perl5.003_07
+</code></pre>
+
+<p>So pick a version, or ask for the last <em>stable</em>. In fact, that&#8217;s the moment I encountered an issue with <code>Perlbrew</code> and <code>Devel::PatchPerl.pm</code>. I asked for the installation of last stable Perl but it failed :</p>
+
+<pre><code>$ perlbrew install stable
+Installing /home/smonff/perl5/perlbrew/build/perl-5.18.2 into
+~/perl5/perlbrew/perls/perl-5.18.2
+
+This could take a while. You can run the following command on
+another shell to track the status:
+
+  tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
+
+Installation process failed. To spot any issues, check
+
+  /home/smonff/perl5/perlbrew/build.perl-5.18.2.log
+
+If some perl tests failed and you still want install this
+distribution anyway, do:
+
+  (cd /home/smonff/perl5/perlbrew/build/perl-5.18.2; make install)
+
+You might also want to try upgrading patchperl before trying again:
+
+  perlbrew install-patchperl
+
+Generally, if you need to install a perl distribution known to
+have minor test failures, do one of these command to avoid seeing this message
+
+  perlbrew --notest install stable
+  perlbrew --force install stable
+</code></pre>
+
+<p>As the process was failing, I&#8217;ve tailed the logs :</p>
+
+<pre><code>tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
+Can't locate Devel/PatchPerl.pm in @INC (@INC contains: /etc/perl 
+/usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2
+/usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 
+/usr/share/perl/5.14 /usr/local/lib/site_perl .) at 
+/home/smonff/perl5/bin/patchperl line 12.
+BEGIN failed--compilation aborted at /home/smonff/perl5/bin/patchperl line 12.
+</code></pre>
+
+<p>Finally, I found the answer on <a href="http://stackoverflow.com/questions/16113467/perlbrew-fails-with-cant-locate-devel-patchperl-pm">StackOverflow</a>, even if it was clearly mentioned in the <code>Perlbrew</code> logs, you should better read sentences to the end :</p>
+
+<pre><code>$ perlbrew install-patchperl  
+</code></pre>
+
+<p>I&#8217;ve tryied to update a <code>Devel::PatchPerl</code> before but updating stupidely without understanding or before reading the doc is useless.Perlbrew seems to embark it&#8217;s own <code>Devel::PatchPerl</code> in <code>~/perl5/perlbrew/bin</code>, that&#8217;s why it conflicts with the core version.</p>
+
+<p>Now you got this enviroment ready, you can install Perl very very easily :</p>
+
+<pre><code>$ perlbrew install stable 
+perl-5.18.2 is successfully installed.
+</code></pre>
 
 		
-		<a href="/blog/2013/12/22/getting-thing-done-for-developpers-working-in-low-bandswitch-areas/" class="more-link">Read on &rarr;</a>
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name"><a href="/blog/2014/02/06/why-i-regularly-switch-between-firefox-and-chrome-and-why-its-boring/" itemprop="url">Why I Regularly Switch Between Firefox and Chrome and Why Its Boring</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<hr />
+
+<p>layout: post
+title: &#8220;Why I regularly switch between Firefox and Chrome and why it&#8217;s boring&#8221;
+date: 2014-02-06 10:51
+comments: true
+categories: firefox, chrome, browser, slow
+__</p>
+
+<p>I still try to use Firefox because it is a great Free Software and I like it. But sometimes, it become damn slow, and the temptation to use Chrome is high, because it is so speed !</p>
+
+<p>I&#8217;ve tryed many things :</p>
+
+<ul>
+<li>reducing number of opened tabs, using <a href="http://getpocket.com/">Pocket</a> to close tabs more easily</li>
+<li>disable extensions, and enable it only when needed</li>
+<li>try strange tricks from people that seem to understand something from the <code>about:config</code> mess</li>
+</ul>
+
+
+		
+		
 	</div>
 
 </article>
@@ -164,7 +280,10 @@ that I was feeling asleep as waiting for a feed to load. I don&#8217;t notice an
 
 <p>Then, when the Reader tragedy came, I&#8217;ve tryed <a href="http://feedly.com">Feedly</a>. Honestly, it seems wonderful. I&#8217;ve liked the <a href="https://play.google.com/store/apps/details?id=com.devhd.feedly">Android App</a>, hey it&#8217;s a wonderful tool. Everybody were recommanding it on the internet. It seems it&#8217;s gonna be my new RSS feeds reader. But this morning I read an <a href="https://twitter.com/LeaVerou/status/313394360412672000">interesting Lea Verou Tweet</a>:</p>
 
-<blockquote><p>So it looks like @<a href="https://twitter.com/feedly">feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.</p><footer><strong>@LeaVerou</strong> <cite><a href='https://twitter.com/LeaVerou/status/313394360412672000'>twitter.com/LeaVerou/status/&hellip;</a></cite></footer></blockquote>
+<blockquote class="twitter-tweet" lang="fr"><p>So it looks like <a href="https://twitter.com/feedly">@feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.</p>&mdash; Lea Verou (@LeaVerou) <a href="https://twitter.com/LeaVerou/statuses/313394360412672000">17 Mars 2013</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>So. What if it will be true. What if Feedly disappear soon? It seems a good solution would be to select a good RSS feed free software like <a href="http://tt-rss.org/">Tiny Tiny RSS</a>, pick-up a random server, set-up a LAMP environment and make things by yourself (as describe in <a href="http://www.sebsauvage.net/rhaa/index.php?2013/03/15/17/15/39-arretez-de-pleurer-google-reader-hebergez-un-lecteur-rss-chez-vous">this sebsauvage post</a>&#8230; I mention <em>Tiny Tiny RSS</em> because it&#8217;s realy simple, customizable and feature <a href="http://f-droid.org/repository/browse/?fdfilter=rss&amp;fdid=org.fox.ttrss">a great Android client that communicate with an API on your server&#8217;s instance</a> featuring interesting synchronisation stuff.</p>
@@ -214,7 +333,7 @@ that I was feeling asleep as waiting for a feed to load. I don&#8217;t notice an
 </div>
 			</div>
 			<footer id="footer" class="inner"><p>
-  Copyright &copy; 2013 - Smonff -
+  Copyright &copy; 2014 - Smonff -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 <a href="http://stackexchange.com/users/923564/smonff"><img src="http://stackexchange.com/users/flair/923564.png" width="208" height="58" alt="profile for smonff on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for smonff on Stack Exchange, a network of free, community-driven Q&amp;A sites" /></a>
