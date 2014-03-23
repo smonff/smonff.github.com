@@ -71,9 +71,9 @@ Much more arguments can be used, so please consider reading `perldoc Module::Sta
 	# First argument is the module to add, second is the existing distro (don't use `::` separator)
     $ module-starter --module=Foo::Bar::Me --distro=Foo-Bar  
 
-`Module::Starter::Smart` allows to *add new modules into an existing distribution*, a thing that is not permitted by `Module::Starter`. It will be useful if your distribution grows up all along your development process: you are not supposed to know all your distribution architecture at it's beginning as some like to pretend.
+`Module::Starter::Smart` allows to *add new modules into an existing distribution*, a thing that is not permitted by `Module::Starter`. It will be useful if your distribution grows up all along your development process. You are not supposed to know all your distribution architecture at it's beginning.
 
-This is definitively a way to get a strong architecture for your distribution and start to speak the common language of CPAN. Remember that if a module don't look right for you, most of the time, you can find another one that do almost the same thing in a different way, so feel free to explore.
+This is definitively a way to get a common architecture for your distribution and start to speak the common language of CPAN. Remember that if a module don't look right for you, most of the time, you can find many one that do almost the same thing in a different way, so feel free to explore.
 
 ## Testing
 Utility of testing can be tricky to understand. I remember when I start to learn Java, that tests and exceptions were some things that I can not understand. Hey, if you write a program, it is supposed to do it's job, no? Real things are not that simple and we are not that smart. So it's better to take an extra security.
@@ -118,7 +118,7 @@ This is what learns me the most of things. Even if I get very few bug reports at
 * cpantesters
 * RT bug tracking
 
-I would like to thank [Neil Bowers](https://twitter.com/neilbowers) who suggests me to write this blog post by answering to these two questions :
+I would like to thank [Neil Bowers](https://twitter.com/neilbowers) who suggests me to write this blog post by answering to the two questions :
 
 * Converting a script to a module
 * What makes a "good module"?
