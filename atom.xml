@@ -4,7 +4,7 @@
   <title><![CDATA[Smonff Shurfs]]></title>
   <link href="http://smonff.github.io/atom.xml" rel="self"/>
   <link href="http://smonff.github.io/"/>
-  <updated>2014-03-23T18:46:11+07:00</updated>
+  <updated>2014-03-23T18:48:56+07:00</updated>
   <id>http://smonff.github.io/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
@@ -25,7 +25,7 @@
 <p><code>Perlbrew</code> is :</p>
 
 <ul>
-<li><em>a tool to install different verisons of perls</em></li>
+<li><em>a tool to install different versions of perls</em></li>
 <li><em>an admin-free installation management</em> system, means, as for local::lib, you don&#8217;t even need to have sudo rights to use it, so you don&#8217;t have to suck the admin&#8217;s ass</li>
 <li>just like <code>RVM</code> for those who knows Ruby</li>
 </ul>
