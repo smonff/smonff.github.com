@@ -4,7 +4,7 @@
   <title><![CDATA[Category: perlbrew, | Smonff Shurfs]]></title>
   <link href="http://smonff.github.io/blog/categories/perlbrew/atom.xml" rel="self"/>
   <link href="http://smonff.github.io/"/>
-  <updated>2014-03-23T21:49:05+07:00</updated>
+  <updated>2014-03-23T21:50:43+07:00</updated>
   <id>http://smonff.github.io/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
@@ -22,7 +22,7 @@
 <a href="https://metacpan.org/pod/release/FLORA/perl-5.14.2/pod/perl.pod">Perl 5, version 14.2</a>
 (v5.14.2) from the Ubuntu 12.04 packages. It includes 57 registered patches. As it is a 2011 version, I've decided to switch from the Ubuntu packages to a more recent one (and considered as stable by the Perl community although it is not by the Debian one).</p>
 
-<p>As I love to use <code>local::lib</code> and <code>cpanm</code>, I've chosen to use <a href="http://perlbrew.pl/"><code>Perlbrew</code></a> to achieve the installation of this last stable version. The tool seems as convenient as <code>cpanm</code> and <code>local::lib</code> and  reputated as making your life easier when dealing with Perl installations..</p>
+<p>As I love to use <code>local::lib</code> and <code>cpanm</code>, I've chosen to use <a href="http://perlbrew.pl/"><code>Perlbrew</code></a> to achieve the installation of this last stable version. The tool seems as convenient as <code>cpanm</code> and <code>local::lib</code>, it is known for making your life easier when dealing with Perl installations.</p>
 
 <p><code>Perlbrew</code> is :</p>
 
