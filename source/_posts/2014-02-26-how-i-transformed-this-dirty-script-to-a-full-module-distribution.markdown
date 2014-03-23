@@ -9,32 +9,35 @@ published: false
 ---
 
 # Part 1 : converting the script to a module
-*This post is for beginners developers who wants to start a project from scratch but also want to use as much as possible of things from CPAN. It's supposed to be **one possible way** that defends modern practices. I do not try to do marketing over my own projects, that is only used as an example and a personal experience on modern Perl.*
+*This post is for beginners developers who wants to start a project from scratch but also want to use as much as possible of things from CPAN. It's supposed to be **one possible way** that defends modern practices I learned through the friendly Perl community. I do not try to do marketing over my own projects, that is only used as an example and a personal experience on modern Perl.*
 
-Once, I needed a script for very repetitive task. Even if this task was pretty simple to do by hand (listing dependencies used in a project, but not dependencies of dependencies and generating a report), it was error proof if done by hand. So, I picked some useful modules on [MetaCPAN](https://metacpan.org), [started to write some stuff](https://github.com/smonff/Shurf/commit/a5e7aeb2fab7ef6fa5dd9cf81aa34c49860037ce), and as each time with Perl, work was done quicker than you can imagine.
+Once, I needed a script for a very repetitive task. Even if this task was pretty simple to do by hand (listing dependencies used in a project, but not dependencies of dependencies and generating a formatted report), it was error proof if done by hand. So, I picked some useful modules on [MetaCPAN](https://metacpan.org), [started to write some stuff](https://github.com/smonff/Shurf/commit/a5e7aeb2fab7ef6fa5dd9cf81aa34c49860037ce), and as each time with Perl, work was done quicker than you can imagine.
 
 I started to write this script as a helper for a bigger project. Period. Then I realized that it has a lot of serious failings :
 
-* The script wasn't easily accessible to others on CPAN
+* If I would have the same issue in another project I will probably not be able to re-use it  
 * I haven't tested anything so each time I will make a change to the script, I wasn't sure the full script keeps working as expected
 * It has been used only on one machine, running Ubuntu, it wasn't supposed to be abble run on Debian, Windows or on another Perl version
 * The stuff starts to give me headaches
+* The script wasn't easily accessible to others on CPAN
 * It has no documentation
 * It was very slow
 * It was dirty (use system commands with back-quotes and other horrors)
 * It was not modular, AKA, no subroutines/methods that allow a clean API : the script is fully executed, you can't call the part that is interesting in a specific context.
 
-That's why at this point, the solution to fix all these issues was to start a module distribution. Now, I'm going to tell you the story of a one week side-work that has been transformed to a three month (and more) of a Perl module development full of fun and adventure. It's more about culture and ease of use, than about performance and optimization.
+It looks like this code would be OK for a single use. But in case I have to re-use it again and again, it would be useful to have a pretty documentation and tests that allow to develop the program further and fix bugs without breaking an old working part of it.
+
+That's why at this point, the solution to fix all these issues was to start a module distribution. Now, I'm going to tell you the story of a one week side-work that has been transformed to a three month (and more) of a Perl module development full of fun and adventure. It's more about culture and ease of use, than about performance and optimization..
 
 ## Looking at what others have already done on MetaCPAN
-First of all, you really should search for what you need on [MetaCPAN](https://metacpan.org). CPAN **is** one of the main Perl's strength so if you don't use it to make your own life simpler, all the following will be a pain. Installing modules from CPAN is as [simple as getting `cpanm`](https://metacpan.org/pod/App::cpanminus). It's almost encouraging if you decide that you want to create something new because most of the time, a module already exist for everything you want to do.
+First of all, you really should search for what you need on [MetaCPAN](https://metacpan.org). CPAN **is** one of the main Perl's strength so if you don't use it to make your own life simpler, all the following will be a pain. Installing modules from CPAN is as [simple as getting `cpanm`](https://metacpan.org/pod/App::cpanminus). It's almost decouraging if you decide that you want to create something new because most of the time, a module already exist for everything you want to do.
 
 The interesting fact is that you can use some existing modules to create something new. For example, if you combine [App::Ack](http://beyondgrep.com), [Module::CoreList](https://metacpan.org/pod/Module::CoreList), [Module::Version]() and [Version::Compare](https://metacpan.org/pod/Version::Compare), you can easily build a tool that :
 
-* Search for declared module *used* (`use Foo::Bar;`)
+* Search for declared module *uses* (`use Foo::Bar;`)
 * Know if this module version is part of your Perl core modules
 * Retrieve your installed module version
-* In case this module is in Perl core but you would use a more recent one, know it (you may have installed it to get new functionality or bug-fixes for example). 
+* In case this module is in Perl core but you would use a more recent one on this environment, know it (you may have installed it to get new functionality or bug-fixes for example). 
 
 Using the tools written by others will makes your life easier, because most of the tools you will find on CPAN have been developed by a community of developers, debugged, patched and step by step designed as better and better by the community. It's now time to proceed as them, and make your work possibly available to the world.
 
@@ -58,7 +61,7 @@ To start building a module, you will need a distribution architecture. Typical d
 		└── pod.t
 						
 
-The full distribution directories and files tree, a lot of boilerplate code, and the module squeleton, containing documentation and licences templates can be generated automatically using `Module::Starter` (not part of a Perl core - but why?). 
+The full distribution directories and files tree, a lot of boilerplate code, and the module squeleton, containing documentation and licences templates can be generated automatically using `[Module::Starter](https://metacpan.org/pod/Module::Starter)` (not part of a Perl core - but why?). 
 
     $ cpanm Module::Starter Module::Starter::Smart
     $ module-starter --module=Foo::Bar,Foo::Bat --author="Sébastien Feugère" --email=smonf@cpan.org
@@ -68,11 +71,18 @@ Much more arguments can be used, so please consider reading `perldoc Module::Sta
 	# First argument is the module to add, second is the existing distro (don't use `::` separator)
     $ module-starter --module=Foo::Bar::Me --distro=Foo-Bar  
 
-`Module::Starter::Smart` allows to *add new modules into an existing distribution*, a thing that is not permitted by `Module::Starter`. It will be useful if your distribution grows up all along your development process. You are not supposed to know all your distribution architecture at it's beginning.
+`Module::Starter::Smart` allows to *add new modules into an existing distribution*, a thing that is not permitted by `Module::Starter`. It will be useful if your distribution grows up all along your development process: you are not supposed to know all your distribution architecture at it's beginning as some like to pretend.
 
-This is definitively a way to get a common architecture for your distribution and start to speak the common language of CPAN. Remember that if a module don't look right for you, most of the time, you can find many one that do almost the same thing in a different way, so feel free to explore.
+This is definitively a way to get a strong architecture for your distribution and start to speak the common language of CPAN. Remember that if a module don't look right for you, most of the time, you can find another one that do almost the same thing in a different way, so feel free to explore.
 
 ## Testing
+Utility of testing can be tricky to understand. I remember when I start to learn Java, that tests and exceptions were some things that I can not understand. Hey, if you write a program, it is supposed to do it's job, no? Real things are not that simple and we are not that smart. So it's better to take an extra security.
+
+Testing in Perl is **really** a fascinating thing, because the main used modules for this use case, [Test::Simple](), [Test::Harness]() and [Test::More]() gives you a full methodology through the *[Test Anything Protocol](http://en.wikipedia.org/wiki/Test_Anything_Protocol)* (TAP).Calling it *harness* is exactly the perfect word to describe what appended if you don't wear your anti-regression harness.
+
+For a long time, I tried to make some development without any tests suites because someone explained me you can do it with console printed logs. That not false, but the problem with logs is that it will be deleted once you debugging has been done, otherwise the code will become very dirty. What you need is reproductible assertions of any functionnality of you program-> LOGS -> Mathieu
+
+Tests are a very good source of documentation and ways of using your module too.
 
 ## Documentatation
 * Tests ARE documentation

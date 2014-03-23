@@ -5,7 +5,7 @@ date: 2013-12-22 20:01
 comments: true
 categories: [travel, mobile, data-plan, development, telecommuting, work, GTD, SSH]
 featured: "/images/posts/getting_things_done.jpg"
-published: true
+published: false
 ---
 
 I have been in [Lao PDR](https://en.wikipedia.org/wiki/Lao_PDR) for a week and I don't have my high-speed Internet connection. All I have is a cool smartphone without a SIM card for this country. Though, it doesn't seem to be a problem to find a SIM card: just before the immigration point in airport, the application form already mentions an ad for [one of the main telecoms company](http://www.beeline.la/) saying that  *to really communicate like a local*, I should subscribe to that company.

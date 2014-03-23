@@ -16,9 +16,9 @@ This is a very important thing. *Feeds*... Hey, if you want to share feeds with 
 
 Then, when the Reader tragedy came, I've tryed [Feedly](http://feedly.com). Honestly, it seems wonderful. I've liked the [Android App](https://play.google.com/store/apps/details?id=com.devhd.feedly), hey it's a wonderful tool. Everybody were recommanding it on the internet. It seems it's gonna be my new RSS feeds reader. But this morning I read an [interesting Lea Verou Tweet](https://twitter.com/LeaVerou/status/313394360412672000):   
 
-{% blockquote @LeaVerou https://twitter.com/LeaVerou/status/313394360412672000 %}
-So it looks like @<a href="https://twitter.com/feedly">feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.
-{% endblockquote %}
+<blockquote class="twitter-tweet" lang="fr"><p>So it looks like <a href="https://twitter.com/feedly">@feedly</a> is the most popular alternative, but it doesn’t seem to have any business model, so it could disappear at any time.</p>&mdash; Lea Verou (@LeaVerou) <a href="https://twitter.com/LeaVerou/statuses/313394360412672000">17 Mars 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 So. What if it will be true. What if Feedly disappear soon? It seems a good solution would be to select a good RSS feed free software like [Tiny Tiny RSS](http://tt-rss.org/), pick-up a random server, set-up a LAMP environment and make things by yourself (as describe in [this sebsauvage post](http://www.sebsauvage.net/rhaa/index.php?2013/03/15/17/15/39-arretez-de-pleurer-google-reader-hebergez-un-lecteur-rss-chez-vous)... I mention *Tiny Tiny RSS* because it's realy simple, customizable and feature [a great Android client that communicate with an API on your server's instance](http://f-droid.org/repository/browse/?fdfilter=rss&fdid=org.fox.ttrss) featuring interesting synchronisation stuff.
 
