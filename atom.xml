@@ -4,7 +4,7 @@
   <title><![CDATA[Smonff Shurfs]]></title>
   <link href="http://smonff.github.io/atom.xml" rel="self"/>
   <link href="http://smonff.github.io/"/>
-  <updated>2014-03-23T20:06:47+07:00</updated>
+  <updated>2014-03-23T20:46:18+07:00</updated>
   <id>http://smonff.github.io/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
@@ -22,7 +22,7 @@
 <a href="https://metacpan.org/pod/release/FLORA/perl-5.14.2/pod/perl.pod">Perl 5, version 14.2</a>
 (v5.14.2) from the Ubuntu 12.04 packages. It includes 57 registered patches. As it is a 2011 version, I&#8217;ve decided to switch from the Ubuntu packages to a more recent one (and considered as stable by the Perl community althought it is not by the Debian one).</p>
 
-<p>As I love to use <code>local::lib</code> and <code>cpanm</code>, I&#8217;ve choosed to use <a href="http://perlbrew.pl/"><code>Perlbrew</code></a> to achieve the installation of this last stable version. The tool seems as convenient as <code>cpanm</code> and <code>local::lib</code> and I reputated as making your life easier when dealing with Perl installations..</p>
+<p>As I love to use <code>local::lib</code> and <code>cpanm</code>, I&#8217;ve choosed to use <a href="http://perlbrew.pl/"><code>Perlbrew</code></a> to achieve the installation of this last stable version. The tool seems as convenient as <code>cpanm</code> and <code>local::lib</code> and  reputated as making your life easier when dealing with Perl installations..</p>
 
 <p><code>Perlbrew</code> is :</p>
 
@@ -111,18 +111,32 @@ Can't locate Devel/PatchPerl.pm in @INC (@INC contains: /etc/perl
 BEGIN failed--compilation aborted at /home/smonff/perl5/bin/patchperl line 12.
 </code></pre>
 
-<p>I&#8217;ve tryied to update a <code>Devel::PatchPerl</code>, but updating stupidely without understanding or before reading the doc is useless. Perlbrew seems to embark it&#8217;s own <code>Devel::PatchPerl</code> in <code>~/perl5/perlbrew/bin</code>, that&#8217;s why it conflicts with the core version.</p>
-
-<p>Finally, I found the answer on <a href="http://stackoverflow.com/questions/16113467/perlbrew-fails-with-cant-locate-devel-patchperl-pm">StackOverflow</a>, even if it was clearly mentioned in the <code>Perlbrew</code> logs, you should better read sentences to the end and do what you&#8217;re told :</p>
+<p>I&#8217;ve tryied to update a <code>Devel::PatchPerl</code>, but updating stupidely without understanding or before reading the doc is useless. Finally, I found the answer on <a href="http://stackoverflow.com/questions/16113467/perlbrew-fails-with-cant-locate-devel-patchperl-pm">StackOverflow</a>, even if it was clearly mentioned in the <code>Perlbrew</code> logs, you should better read sentences to the end and do what you&#8217;re told. Perlbrew seems to embark it&#8217;s own <code>Devel::PatchPerl</code> in <code>~/perl5/perlbrew/bin</code>, and should not use the core one. More about this <a href="http://perlbrew.pl/Perlbrew-and-Friends.html">on Perlbrew website</a>&#8230; So now do what you&#8217;re told :</p>
 
 <pre><code>$ perlbrew install-patchperl  
 </code></pre>
 
-<p>Now you got the enviroment ready, you can install Perl very very easily :</p>
+<p>This fixes the issue, and you now got the enviroment ready. Perls installations will be very very easy :</p>
 
 <pre><code>$ perlbrew install stable 
 perl-5.18.2 is successfully installed.
 </code></pre>
+
+<p><strong>Happy brewing !</strong></p>
+
+<h1>References</h1>
+
+<ul>
+<li><a href="http://perlbrew.pl/">perlbrew.pl/</a></li>
+<li><a href="https://metacpan.org/pod/distribution/App-perlbrew/bin/perlbrew">Perlbrew on MetaCPAN</a></li>
+<li>A talk about Perlbrew by Kang-min Liu</li>
+</ul>
+
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/9708071" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px 1px 0; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="https://fr.slideshare.net/gugod/perlbrew" title="Perlbrew" target="_blank">Perlbrew</a> </strong> from <strong><a href="http://www.slideshare.net/gugod" target="_blank">Kang-min Liu</a></strong> </div></p>
 ]]></content>
   </entry>
   
