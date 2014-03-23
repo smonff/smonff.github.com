@@ -107,7 +107,7 @@ $(function(){
 <ul>
 <li><em>a tool to install different versions of perls</em> and switch through them</li>
 <li><em>an admin-free installation management</em> system, means, as for <code>local::lib</code>, you don&#8217;t even need to have superuser rights to use it, so you don&#8217;t have to suck the admin&#8217;s ass</li>
-<li>it&#8217;s just like <code>RVM</code> for those who knows Ruby</li>
+<li>it&#8217;s just like <code>RVM</code> for those who know Ruby</li>
 </ul>
 
 
@@ -120,7 +120,7 @@ $(function(){
 <pre><code>$ cpanm perlbrew
 </code></pre>
 
-<p>Then, we initialize it&#8217;s environment. Don&#8217;t forget this part or it won&#8217;t work :</p>
+<p>Then, we initialize its environment. Don&#8217;t forget this part or it won&#8217;t work :</p>
 
 <pre><code>$ perlbrew init
 
@@ -142,7 +142,7 @@ Happy brewing!
 source ~/perl5/perlbrew/etc/bashrc
 </code></pre>
 
-<p>Now start a new shell or <code>source</code> your shell configuration file, that&#8217;s it <em>Perlbrew is on</em>! You can check wich Perls are available :</p>
+<p>Now start a new shell or <code>source</code> your shell configuration file, that&#8217;s it <em>Perlbrew is on</em>! You can check which Perls are available :</p>
 
 <pre><code>$ perlbrew available
   perl-5.19.10
@@ -158,7 +158,7 @@ source ~/perl5/perlbrew/etc/bashrc
   perl5.003_07
 </code></pre>
 
-<p>So pick a version, or ask for the last <em>stable</em>. In fact, that&#8217;s the moment I encountered an issue with <code>Perlbrew</code> and <code>Devel::PatchPerl.pm</code>. I asked for the installation of last stable Perl but it failed :</p>
+<p>So pick a version, or ask for the last <em>stable</em> one. In fact, that&#8217;s the moment I encountered an issue with <code>Perlbrew</code> and <code>Devel::PatchPerl.pm</code>. I asked for last stable Perl&#8217;s installation but it failed :</p>
 
 <pre><code>$ perlbrew install stable
 Installing /home/smonff/perl5/perlbrew/build/perl-5.18.2 into
@@ -178,7 +178,7 @@ You might also want to try upgrading patchperl before trying again:
   perlbrew install-patchperl
 </code></pre>
 
-<p>As the process were failing, I&#8217;ve tailed the logs :</p>
+<p>As the process was failing, I tailed the logs :</p>
 
 <pre><code>tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
 Can't locate Devel/PatchPerl.pm in @INC (@INC contains: /etc/perl 
@@ -189,12 +189,12 @@ Can't locate Devel/PatchPerl.pm in @INC (@INC contains: /etc/perl
 BEGIN failed--compilation aborted at /home/smonff/perl5/bin/patchperl line 12.
 </code></pre>
 
-<p>I&#8217;ve tryied to update a <code>Devel::PatchPerl</code>, but updating stupidely without understanding or before reading the doc is useless. Finally, I found the answer on <a href="http://stackoverflow.com/questions/16113467/perlbrew-fails-with-cant-locate-devel-patchperl-pm">StackOverflow</a>, even if it was clearly mentioned in the <code>Perlbrew</code> logs, you should better read sentences to the end and do what you&#8217;re told. Perlbrew seems to embark it&#8217;s own <code>Devel::PatchPerl</code> in <code>~/perl5/perlbrew/bin</code>, and should not use the core one. More about this <a href="http://perlbrew.pl/Perlbrew-and-Friends.html">on Perlbrew website</a>&#8230; So now do what you&#8217;re told :</p>
+<p>I tried to update a <code>Devel::PatchPerl</code>, but updating stupidely without understanding or without reading the doc is useless. Finally, I found the answer on <a href="http://stackoverflow.com/questions/16113467/perlbrew-fails-with-cant-locate-devel-patchperl-pm">StackOverflow</a>, even if it was clearly mentioned in the <code>Perlbrew</code> logs, you should better read sentences till the end and do what you&#8217;re told. Perlbrew seems to embark its own <code>Devel::PatchPerl</code> in <code>~/perl5/perlbrew/bin</code>, and you should not use the core one. More about this <a href="http://perlbrew.pl/Perlbrew-and-Friends.html">on Perlbrew website</a>&#8230; So now do what you&#8217;re told :</p>
 
 <pre><code>$ perlbrew install-patchperl  
 </code></pre>
 
-<p>This fixes the issue, and you now got the enviroment ready. Perls installations will be very very easy :</p>
+<p>This fixes the issue, the environment is ready. Perls installations will be very very easy to achieve :</p>
 
 <pre><code>$ perlbrew install stable 
 perl-5.18.2 is successfully installed.
