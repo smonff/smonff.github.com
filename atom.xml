@@ -4,7 +4,7 @@
   <title><![CDATA[Smonff Shurfs]]></title>
   <link href="http://smonff.github.io/atom.xml" rel="self"/>
   <link href="http://smonff.github.io/"/>
-  <updated>2014-03-23T18:41:53+07:00</updated>
+  <updated>2014-03-23T18:42:53+07:00</updated>
   <id>http://smonff.github.io/</id>
   <author>
     <name><![CDATA[Smonff]]></name>
@@ -132,34 +132,6 @@ BEGIN failed--compilation aborted at /home/smonff/perl5/bin/patchperl line 12.
 <pre><code>$ perlbrew install stable 
 perl-5.18.2 is successfully installed.
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why I Regularly Switch Between Firefox And Chrome And Why Its Boring]]></title>
-    <link href="http://smonff.github.io/blog/2014/02/06/why-i-regularly-switch-between-firefox-and-chrome-and-why-its-boring/"/>
-    <updated>2014-02-06T00:00:00+07:00</updated>
-    <id>http://smonff.github.io/blog/2014/02/06/why-i-regularly-switch-between-firefox-and-chrome-and-why-its-boring</id>
-    <content type="html"><![CDATA[<hr />
-
-<p>layout: post
-title: &#8220;Why I regularly switch between Firefox and Chrome and why it&#8217;s boring&#8221;
-date: 2014-02-06 10:51
-comments: true
-categories: firefox, chrome, browser, slow
-published: false
-__</p>
-
-<p>I still try to use Firefox because it is a great Free Software and I like it. But sometimes, it become damn slow, and the temptation to use Chrome is high, because it is so speed !</p>
-
-<p>I&#8217;ve tryed many things :</p>
-
-<ul>
-<li>reducing number of opened tabs, using <a href="http://getpocket.com/">Pocket</a> to close tabs more easily</li>
-<li>disable extensions, and enable it only when needed</li>
-<li>try strange tricks from people that seem to understand something from the <code>about:config</code> mess</li>
-</ul>
-
 ]]></content>
   </entry>
   
