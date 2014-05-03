@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: perl | Smonff Shurfs]]></title>
-  <link href="http://smonff.github.io/blog/categories/perl/atom.xml" rel="self"/>
+  <title><![CDATA[Category: library | Smonff Shurfs]]></title>
+  <link href="http://smonff.github.io/blog/categories/library/atom.xml" rel="self"/>
   <link href="http://smonff.github.io/"/>
   <updated>2014-05-03T11:52:43+07:00</updated>
   <id>http://smonff.github.io/</id>
@@ -89,84 +89,6 @@ Module::Starter::BuilderSet 1.60
 Module::Starter::Plugin::Template   1.60
 Searched with App::Module::Lister with pattern Module::Starter
 </code></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[How to log easily with Log::Minimal and File::Stamped ?]]></title>
-    <link href="http://smonff.github.io/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped/"/>
-    <updated>2013-09-24T18:00:00+07:00</updated>
-    <id>http://smonff.github.io/blog/2013/09/24/how-to-log-easily-with-log-minimal-and-file-stamped</id>
-    <content type="html"><![CDATA[<p>We love logs because it helps us to debug during development. We also need a quick way to enable / disable logs because it's not necessary for everybody :</p>
-
-<ul>
-<li>you maybe want logs during the development of your module</li>
-<li>people who will use it don't <em>necessary</em> want to watch it</li>
-</ul>
-
-
-<p>When testing a module and building a distribution, you maybe don't want to inject <em>dirt</em> in your tests output. In the case of debuging, I think it's a good thing to write it to a file and <code>tail</code> on it.</p>
-
-<!--more-->
-
-
-<p>We're gonna use two CPAN's modules, <a href="https://metacpan.org/module/Log::Minimal">Log::Minimal</a>, a <em>minimal but custimizable logger</em> and <a href="https://metacpan.org/module/File::Stamped">File::Stamped</a>, that allows <em>stamped log file</em>. They are not supposed to be build together, but Tokuhiro Matsuno(<code>File::Stamped</code> creator) recommend <code>Log::Minimal</code> in a code example.</p>
-
-<p>My aim was to create a log system for the debug moment, because I was boring of using <code>p()</code> function from <a href="https://metacpan.org/module/Data::Printer">Data::Printer</a> during my development and tests, because it was a bad thing: I was constantly adding and moving debug-print-code, that is a bad practice because it makes you repeat stupid tasks and encourage to test in a random way. I took a look at CPAN and Stack Overflow for some logging solutions, and <a href="https://metacpan.org/module/Log::Log4perl">Log::Log4Perl</a> seems to be a recommended solution for most of serious apps. But it seems to much complicated to me, I don't want to manage a new conf file, etc.</p>
-
-<p>As <code>Log::Minimal</code> seems to be really simple to use, I've installed it and was very satisfacted of it quickly. Now, we are going to see how to use it to create a temporary file that will contain the traces.</p>
-
-<p><code>bash Install the modules :D
-$ cpanm Log::Minimal File::Stamped
-</code></p>
-
-<p>``` perl Log some stuff to a file
-use strict;
-use warnings;</p>
-
-<p>use Log::Minimal;
-use File::Stamped;
-use File::HomeDir;
-use File::Spec::Function qw(catdir catfile);</p>
-
-<p>$ENV{LM_DEBUG} = 1;</p>
-
-<p>my $work_path = File::HomeDir->my_documents;</p>
-
-<p>my $log_fh = File::Stamped->new(
-  pattern => catdir( $work_path, "log.%Y-%m-%d.out"),
-);</p>
-
-<h1>Overrides Log::Minimal PRINT method</h1>
-
-<p>$Log::Minimal::PRINT = sub {
-  my ( $time, $type, $message, $trace) = @_;</p>
-
-<p>  # Removed $trace because it was too long in my environment
-  print {$log_fh} "$time [$type] $message\n";
-};</p>
-
-<p>debugf("My::Module debugger init.");
-debugf("Other");
-debugf("interestant");
-debugf("things...");
-<code>``
-If you</code>tail<code>to</code>/home/user/Documents/log.2013-09-24.out` (adjust this to your own OS) from your terminal during your module tests...</p>
-
-<p><code>bash tail
-$ tail -vf /home/user/Douments/log.2013-09-24.out
-</code></p>
-
-<p>... it will log the following :</p>
-
-<p><code>plain out
-2013-09-24T19:28:38 [DEBUG] My::Module debugger init.
-2013-09-24T19:28:39 [DEBUG] Other
-2013-09-24T19:28:39 [DEBUG] interestant
-2013-09-24T19:28:39 [DEBUG] things...
-</code></p>
-
-<p>That was a very <em>minimal</em> blog post, but I hope it could be usefull. Thanx to nmishin for cross-platforming advices !</p>
 ]]></content>
   </entry>
   

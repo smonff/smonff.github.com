@@ -130,90 +130,174 @@ $(function(){
 
 <p>I assume that you already have <code>cpanm</code> and <code>local::lib</code> installed (you don&#8217;t use the <code>root</code> account nor sudo).</p>
 
-<p>We install <code>Perlbrew</code> :</p>
+<figure class='code'><figcaption><span>We install `Perlbrew`</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>cpanm perlbrew
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>$ cpanm perlbrew
-</code></pre>
 
-<p>Then, we initialize its environment. Don&#8217;t forget this part or it won&#8217;t work :</p>
 
-<pre><code>$ perlbrew init
 
-perlbrew root (~/perl5/perlbrew) is initialized.
+<figure class='code'><figcaption><span>Then, we initialize its environment. Don&#8217;t forget this part or it won&#8217;t work :</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>perlbrew init
+</span><span class='line'>
+</span><span class='line'>perlbrew root <span class="o">(</span>~/perl5/perlbrew<span class="o">)</span> is initialized.
+</span><span class='line'>  
+</span><span class='line'>Append the following piece of code to the end of your ~/.bash_profile and
+</span><span class='line'>start a new shell, perlbrew should be up and fully functional from there:
+</span><span class='line'>  
+</span><span class='line'>    <span class="nb">source</span> ~/perl5/perlbrew/etc/bashrc
+</span><span class='line'>      
+</span><span class='line'>Simply run <span class="sb">`</span>perlbrew<span class="sb">`</span> <span class="k">for </span>usage details.
+</span><span class='line'>      
+</span><span class='line'>Happy brewing!
+</span></code></pre></td></tr></table></div></figure>
 
-Append the following piece of code to the end of your ~/.bash_profile and
-start a new shell, perlbrew should be up and fully functional from there:
 
-    source ~/perl5/perlbrew/etc/bashrc
-
-Simply run `perlbrew` for usage details.
-
-Happy brewing!
-</code></pre>
+<p>`</p>
 
 <p>It has created some files in <code>~/.perlbrew</code>. You need to add the one that fit your environment in your configuration file (<code>.bashrc</code> or other) :</p>
 
-<pre><code># In .bashrc
-source ~/perl5/perlbrew/etc/bashrc
-</code></pre>
+<figure class='code'><figcaption><span>In .bashrc</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">source</span> ~/perl5/perlbrew/etc/bashrc
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Now start a new shell or <code>source</code> your shell configuration file, that&#8217;s it <em>Perlbrew is on</em>! You can check which Perls are available :</p>
 
-<pre><code>$ perlbrew available
-  perl-5.19.10
-  perl-5.18.2
-  perl-5.16.3
-  perl-5.14.4
-  perl-5.12.5
-  perl-5.10.1
-  perl-5.8.9
-  perl-5.6.2
-  perl5.005_04
-  perl5.004_05
-  perl5.003_07
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>perlbrew available
+</span><span class='line'>  perl-5.19.10
+</span><span class='line'>  perl-5.18.2
+</span><span class='line'>  perl-5.16.3
+</span><span class='line'>  perl-5.14.4
+</span><span class='line'>  perl-5.12.5
+</span><span class='line'>  perl-5.10.1
+</span><span class='line'>  perl-5.8.9
+</span><span class='line'>  perl-5.6.2
+</span><span class='line'>  perl5.005_04
+</span><span class='line'>  perl5.004_05
+</span><span class='line'>  perl5.003_07
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
 
 <p>So pick a version, or ask for the last <em>stable</em> one. In fact, that&#8217;s the moment I encountered an issue with <code>Perlbrew</code> and <code>Devel::PatchPerl.pm</code>. I asked for last stable Perl&#8217;s installation but it failed :</p>
 
-<pre><code>$ perlbrew install stable
-Installing /home/smonff/perl5/perlbrew/build/perl-5.18.2 into
-~/perl5/perlbrew/perls/perl-5.18.2
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>perlbrew install stable
+</span><span class='line'>Installing /home/smonff/perl5/perlbrew/build/perl-5.18.2 into
+</span><span class='line'>~/perl5/perlbrew/perls/perl-5.18.2
+</span><span class='line'>  
+</span><span class='line'>This could take a <span class="k">while</span>. You can run the following <span class="nb">command </span>on
+</span><span class='line'>another shell to track the status:
+</span><span class='line'>  
+</span><span class='line'>  tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
+</span><span class='line'>  
+</span><span class='line'>Installation process failed. To spot any issues, check
+</span><span class='line'>  
+</span><span class='line'>    /home/smonff/perl5/perlbrew/build.perl-5.18.2.log
+</span><span class='line'>      
+</span><span class='line'>You might also want to try upgrading patchperl before trying again:
+</span><span class='line'>      
+</span><span class='line'>  perlbrew install-patchperl
+</span></code></pre></td></tr></table></div></figure>
 
-This could take a while. You can run the following command on
-another shell to track the status:
-
-  tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
-
-Installation process failed. To spot any issues, check
-
-  /home/smonff/perl5/perlbrew/build.perl-5.18.2.log
-
-You might also want to try upgrading patchperl before trying again:
-
-  perlbrew install-patchperl
-</code></pre>
 
 <p>As the process was failing, I tailed the logs :</p>
 
-<pre><code>tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
-Can't locate Devel/PatchPerl.pm in @INC (@INC contains: /etc/perl 
-/usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2
-/usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 
-/usr/share/perl/5.14 /usr/local/lib/site_perl .) at 
-/home/smonff/perl5/bin/patchperl line 12.
-BEGIN failed--compilation aborted at /home/smonff/perl5/bin/patchperl line 12.
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>tail -f ~/perl5/perlbrew/build.perl-5.18.2.log
+</span><span class='line'>Can<span class="err">&#39;</span>t locate Devel/PatchPerl.pm in @INC <span class="o">(</span>@INC contains: /etc/perl
+</span><span class='line'>/usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2
+</span><span class='line'>/usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14
+</span><span class='line'>/usr/share/perl/5.14 /usr/local/lib/site_perl .<span class="o">)</span> at
+</span><span class='line'>/home/smonff/perl5/bin/patchperl line 12.
+</span><span class='line'>BEGIN failed--compilation aborted at /home/smonff/perl5/bin/patchperl line 12.
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p>I tried to update a <code>Devel::PatchPerl</code>, but updating stupidely without understanding or without reading the doc is useless. Finally, I found the answer on <a href="http://stackoverflow.com/questions/16113467/perlbrew-fails-with-cant-locate-devel-patchperl-pm">StackOverflow</a>, even if it was clearly mentioned in the <code>Perlbrew</code> logs, you should better read sentences till the end and do what you&#8217;re told. Perlbrew seems to embark its own <code>Devel::PatchPerl</code> in <code>~/perl5/perlbrew/bin</code>, and you should not use the core one. More about this <a href="http://perlbrew.pl/Perlbrew-and-Friends.html">on Perlbrew website</a>&#8230; So now do what you&#8217;re told :</p>
 
-<pre><code>$ perlbrew install-patchperl  
-</code></pre>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>perlbrew install-patchperl
+</span></code></pre></td></tr></table></div></figure>
 
-<p>This fixes the issue, the environment is ready. Perls installations will be very very easy to achieve :</p>
 
-<pre><code>$ perlbrew install stable 
-perl-5.18.2 is successfully installed.
-</code></pre>
+<p>Ok, it seems everything is ok. I tried some <code>perl -v</code> and the version has changed. But when installing Dancer with <code>cpanm</code> and setup a test Dancer application, Dancer was reconizing the old version :</p>
+
+<p><img src="/images/posts/dancer.png" alt="Dancer don't use Perlbrew" /></p>
+
+<p>That&#8217;s because, in the same spirit when need a dedicated <code>patchperl</code>, the <code>cpanm</code> installation need a special process too :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>perlbrew install-cpanm
+</span><span class='line'>  
+</span><span class='line'>cpanm is installed to
+</span><span class='line'>  
+</span><span class='line'>  /home/smonff/perl5/perlbrew/bin/cpanm
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>This fixes the issues, the environment is ready. I believe all previously installed modules through <code>cpanm</code> should be re-installed now.</p>
+
+<p>Perls installations will be very very easy to achieve :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>perlbrew install stable
+</span><span class='line'>perl-5.18.2 is successfully installed.
+</span></code></pre></td></tr></table></div></figure>
+
 
 <p><strong>Happy brewing !</strong></p>
 
