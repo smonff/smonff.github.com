@@ -35,7 +35,7 @@ Successfully installed App-Module-Lister-0.15
 ...then in .bashrc, add the following...
 
 
-``` bash Allow to search inside Perl @INC and find installed modules. Note that it can one argument
+``` bash Allow to search inside Perl @INC and find installed modules. Note that it can take one argument (search string)
 function plister () {
   # Get the current position to go back into it  after the script run
   INITIAL_POSITION=$(PWD)
